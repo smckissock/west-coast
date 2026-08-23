@@ -356,7 +356,7 @@
     {
       "title": "Las Vegas",
       "state": "Nevada",
-      "description": "We aren't into the Las Vegas sins - except maybe neon - but the Pinball Hall of Fame as great. Maybe 200 working pinball machines dating from the 50s. Plus we went to cirque du soleil, and ate at a Las Vegas buffet, which I hear might be going away.",
+      "description": "We aren't into the Las Vegas sins - except maybe neon - but the Pinball Hall of Fame was great. Maybe 200 working pinball machines dating from the 50s. Plus we went to cirque du soleil, and ate at a Las Vegas buffet, which I hear might be going away.",
       "startDate": "2026-07-28",
       "endDate": "2026-07-30",
       "images": [
@@ -484,7 +484,7 @@
     {
       "title": "Grand Canyon",
       "state": "Arizona",
-      "description": "Did a small part of the Bright Angel trial. It very was hot.",
+      "description": "Did a small part of the Bright Angel trial. It very was hot. Would like to do a multi-day hike to the river someday.",
       "startDate": "2026-07-30",
       "endDate": "2026-07-31",
       "images": [
@@ -653,7 +653,7 @@
     {
       "title": "Horseshoe Bend",
       "state": "Colorado",
-      "description": "This is the Colorado river in Page, Colorado on the road between the Grand Canyon and Zion. Needed to walk in 110 degree weather, but not too bad.",
+      "description": "This is the Colorado river in Page, Colorado on the road between the Grand Canyon and Zion. Needed to walk in 110 degree weather, but not too bad. for the crazy view.",
       "startDate": "2026-07-31",
       "endDate": "2026-07-31",
       "images": [
@@ -1023,6 +1023,7 @@
     },
     {
       "title": "Death Valley",
+      "state": "California",
       "description": "Not much to see here, but we got a nice picture in front of the sign - 120F / 49C!",
       "startDate": "2026-08-03",
       "endDate": "2026-08-03",
@@ -1087,7 +1088,7 @@
     {
       "title": "Manzanar - Japanese Internment Camp",
       "state": "California",
-      "description": "The camp's buildings are not there anymore, but you can drive around the camp and see the foundations to get a sense of the scope of the place. Very good museum.",
+      "description": "The camp's buildings are not there any more, but you can drive around the camp and see the foundations to get a sense of the scope of the place. Also a very good museum. There will be similar museums about today's internment camps.",
       "startDate": "2026-08-03",
       "endDate": "2026-08-03",
       "images": [
@@ -1146,6 +1147,7 @@
     {
       "title": "Yosemite",
       "state": "California",
+      "description": "Yosemite is crowded for good reason, so we weren't there long. Traffic! But we did a good hike to Lembert Dome - not Half Dome or El Capitan, but a good challenge for us, and a great view.",
       "startDate": "2026-08-03",
       "endDate": "2026-08-05",
       "images": [
@@ -1274,7 +1276,7 @@
     {
       "title": "Monterey",
       "state": "California",
-      "description": "Monterey Aquarium and Carmel. Also the famous \"17 drive\" which turned out to be the ocean views along Pebble Beach golf course. Oregon coast was better.",
+      "description": "Monterey Aquarium and Carmel. Also the famous \"17 Mile Drive\" which turned out to be the ocean views along Pebble Beach golf course. Oregon coast was better.",
       "startDate": "2026-08-05",
       "endDate": "2026-08-05",
       "images": [
@@ -1423,7 +1425,7 @@
     {
       "title": "San Francisco",
       "state": "California",
-      "description": "We stayed for three days in the \"Royal Pacific Motor Inn\" which is between Chinatown and Little Italy and around the corner from City Lights bookstore. Also easy to walk to Coit Tower and the Embarcadero.  We needed to drive and Uber to Golden Gate bridge and Little Japan. Also spent a day in Silicon Valley - Apple, Google and the Computer History Museum.",
+      "description": "We stayed for three days in the \"Royal Pacific Motor Inn\" which is between Chinatown and Little Italy and around the corner from City Lights bookstore. Also easy to walk to Coit Tower and the Embarcadero.  We needed to drive and Uber to Golden Gate bridge and Little Japan. Also spent a day in Silicon Valley - Apple, Google and the Computer History Museum. Golden Gate bridge was a highlight.",
       "startDate": "2026-08-05",
       "endDate": "2026-08-07",
       "images": [
@@ -1842,7 +1844,7 @@
     {
       "title": "Charles Shultz Museum",
       "state": "California",
-      "description": "Awesome museum for Peanuts fan in Santa Rosa, where Shultz did most of his work. Bottom floor is devoted to the comics, and upper floor to Shultz's life, including his actual studio.",
+      "description": "Awesome museum for Peanuts fan in Santa Rosa, where Shultz did most of his work. Bottom floor is devoted to the comics, and upper floor to Shultz's life, including his actual studio. But left kind of perplexed and bummed, as Shultz would have intended.",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "images": [
@@ -1956,7 +1958,7 @@
     {
       "title": "Pacific Coast Highway / Redwoods",
       "state": "California",
-      "description": "Many options for hikes in different redwood groves, and you mostly have them to yourself. Not too hot in early August.",
+      "description": "Many options for hikes in different redwood groves, and you mostly have them to yourself. Not too hot in early August. The stops and hikes on the Oregon coast are unbelievable, and you have them all to yourself.  Could easily spend a week on those.",
       "startDate": "2026-08-08",
       "endDate": "2026-08-10",
       "images": [
@@ -2472,7 +2474,7 @@
         {
           "filename": "IMG_3118.JPEG",
           "datetime": "2026-08-12T20:45:06",
-          "hero": false
+          "hero": true
         },
         {
           "filename": "IMG_3120.JPEG",
@@ -2487,7 +2489,7 @@
         {
           "filename": "IMG_3122.JPEG",
           "datetime": "2026-08-12T20:47:31",
-          "hero": true
+          "hero": false
         },
         {
           "filename": "IMG_3123.JPEG",

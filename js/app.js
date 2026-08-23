@@ -895,7 +895,7 @@
       .map(function (group) {
         const parts = parseYmd(group.key);
         const heading = parts
-          ? '<h2 class="day-heading"><span class="micro">' +
+          ? '<h2 class="day-heading"><span class="day-heading-label">' +
             escapeHtml(formatDay(parts, false)) +
             "</span></h2>"
           : "";

@@ -470,7 +470,7 @@ body {
 }
 
 .day-group {
-  margin-top: 1.5rem;
+  margin-top: 2.25rem;
 }
 
 .day-heading {
@@ -479,17 +479,26 @@ body {
   z-index: 3;
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  margin: 0 0 0.6rem;
-  padding: 0.5rem 0;
+  gap: 0.85rem;
+  margin: 0 0 0.75rem;
+  padding: 0.55rem 0 0.6rem;
   background: linear-gradient(var(--paper) 86%, rgba(244, 241, 234, 0));
-  color: var(--muted);
+  color: var(--ink);
+  font-size: var(--step-3);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.day-heading-label {
+  flex: 0 0 auto;
 }
 
 .day-heading::after {
   content: "";
   flex: 1;
-  height: 1px;
+  height: 2px;
+  border-radius: 1px;
   background: var(--line);
 }
 
