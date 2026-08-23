@@ -161,6 +161,35 @@ button:hover {
   font-size: 0.8rem;
 }
 
+.leg-item-text {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.leg-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.leg-item-dates,
+.leg-dates {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.leg-item.is-active .leg-item-dates {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.leg-dates {
+  width: 100%;
+  font-size: 0.92rem;
+}
+
 .new-leg {
   margin-top: 0.5rem;
   padding-top: 0.85rem;

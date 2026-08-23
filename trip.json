@@ -2,7 +2,76 @@
   "title": "West Coast Trip",
   "legs": [
     {
+      "title": "Santa Monica",
+      "startDate": "2026-07-24",
+      "endDate": "2026-07-25",
+      "images": [
+        {
+          "filename": "IMG_1908.JPEG",
+          "datetime": "2026-07-24T11:06:36",
+          "hero": true
+        },
+        {
+          "filename": "IMG_1906.JPEG",
+          "datetime": "2026-07-24T11:09:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1915.JPEG",
+          "datetime": "2026-07-25T06:17:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1920.JPEG",
+          "datetime": "2026-07-25T06:19:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1930.JPEG",
+          "datetime": "2026-07-25T06:20:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1931.JPEG",
+          "datetime": "2026-07-25T06:27:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1935.JPEG",
+          "datetime": "2026-07-25T06:27:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1951.JPEG",
+          "datetime": "2026-07-25T08:22:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1953.JPEG",
+          "datetime": "2026-07-25T08:27:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1955.JPEG",
+          "datetime": "2026-07-25T08:38:17",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1956.JPEG",
+          "datetime": "2026-07-25T08:51:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1957.JPEG",
+          "datetime": "2026-07-25T08:55:56",
+          "hero": false
+        }
+      ]
+    },
+    {
       "title": "Los Angeles",
+      "startDate": "2026-07-25",
+      "endDate": "2026-07-27",
       "images": [
         {
           "filename": "IMG_1961.JPEG",
@@ -162,72 +231,9 @@
       ]
     },
     {
-      "title": "Santa Monica",
-      "images": [
-        {
-          "filename": "IMG_1908.JPEG",
-          "datetime": "2026-07-24T11:06:36",
-          "hero": true
-        },
-        {
-          "filename": "IMG_1906.JPEG",
-          "datetime": "2026-07-24T11:09:51",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1915.JPEG",
-          "datetime": "2026-07-25T06:17:49",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1920.JPEG",
-          "datetime": "2026-07-25T06:19:53",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1930.JPEG",
-          "datetime": "2026-07-25T06:20:13",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1931.JPEG",
-          "datetime": "2026-07-25T06:27:07",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1935.JPEG",
-          "datetime": "2026-07-25T06:27:21",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1951.JPEG",
-          "datetime": "2026-07-25T08:22:07",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1953.JPEG",
-          "datetime": "2026-07-25T08:27:13",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1955.JPEG",
-          "datetime": "2026-07-25T08:38:17",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1956.JPEG",
-          "datetime": "2026-07-25T08:51:00",
-          "hero": false
-        },
-        {
-          "filename": "IMG_1957.JPEG",
-          "datetime": "2026-07-25T08:55:56",
-          "hero": false
-        }
-      ]
-    },
-    {
       "title": "Pasadena",
+      "startDate": "2026-07-28",
+      "endDate": "2026-07-28",
       "images": [
         {
           "filename": "IMG_2022.JPEG",
@@ -343,6 +349,8 @@
     },
     {
       "title": "Las Vegas",
+      "startDate": "2026-07-28",
+      "endDate": "2026-07-30",
       "images": [
         {
           "filename": "IMG_2152.JPEG",
@@ -432,6 +440,566 @@
         {
           "filename": "IMG_2219.JPEG",
           "datetime": "2026-07-30T07:51:23",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Hoover Dam",
+      "startDate": "2026-07-30",
+      "endDate": "2026-07-30",
+      "images": [
+        {
+          "filename": "IMG_2225.JPEG",
+          "datetime": "2026-07-30T11:58:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2226.JPEG",
+          "datetime": "2026-07-30T11:58:28",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2227.JPEG",
+          "datetime": "2026-07-30T11:58:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2228.JPEG",
+          "datetime": "2026-07-30T12:13:23",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Grand Canyon",
+      "startDate": "2026-07-30",
+      "endDate": "2026-07-31",
+      "images": [
+        {
+          "filename": "IMG_2242.JPEG",
+          "datetime": "2026-07-30T19:22:23",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2243.JPEG",
+          "datetime": "2026-07-30T19:29:56",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2246.JPEG",
+          "datetime": "2026-07-31T06:04:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2247.JPEG",
+          "datetime": "2026-07-31T06:08:17",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2249.JPEG",
+          "datetime": "2026-07-31T06:08:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2251.JPEG",
+          "datetime": "2026-07-31T06:09:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2252.JPEG",
+          "datetime": "2026-07-31T06:09:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2254.JPEG",
+          "datetime": "2026-07-31T06:11:39",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2258.JPEG",
+          "datetime": "2026-07-31T06:14:36",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2259.JPEG",
+          "datetime": "2026-07-31T06:15:40",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2263.JPEG",
+          "datetime": "2026-07-31T06:21:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2265.JPEG",
+          "datetime": "2026-07-31T06:21:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2268.JPEG",
+          "datetime": "2026-07-31T06:22:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2269.JPEG",
+          "datetime": "2026-07-31T06:22:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2270.JPEG",
+          "datetime": "2026-07-31T06:22:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2271.JPEG",
+          "datetime": "2026-07-31T06:23:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2272.JPEG",
+          "datetime": "2026-07-31T06:25:09",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2274.JPEG",
+          "datetime": "2026-07-31T06:27:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2278.JPEG",
+          "datetime": "2026-07-31T06:36:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2282.JPEG",
+          "datetime": "2026-07-31T06:37:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2284.JPEG",
+          "datetime": "2026-07-31T06:40:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2287.JPEG",
+          "datetime": "2026-07-31T06:40:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2295.JPEG",
+          "datetime": "2026-07-31T06:44:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2298.JPEG",
+          "datetime": "2026-07-31T06:44:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2300.JPEG",
+          "datetime": "2026-07-31T06:45:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2301.JPEG",
+          "datetime": "2026-07-31T06:45:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2318.JPEG",
+          "datetime": "2026-07-31T06:50:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2319.JPEG",
+          "datetime": "2026-07-31T06:50:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2320.JPEG",
+          "datetime": "2026-07-31T06:53:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2322.JPEG",
+          "datetime": "2026-07-31T13:12:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2323.JPEG",
+          "datetime": "2026-07-31T13:20:36",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2321.JPEG",
+          "datetime": "2026-07-31T14:11:44",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Horseshoe Bend",
+      "startDate": "2026-07-31",
+      "endDate": "2026-07-31",
+      "images": [
+        {
+          "filename": "IMG_2359.JPEG",
+          "datetime": "2026-07-31T17:21:47",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2366.JPEG",
+          "datetime": "2026-07-31T17:25:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2350.JPEG",
+          "datetime": "2026-07-31T17:57:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2361.JPEG",
+          "datetime": "2026-07-31T18:23:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2364.JPEG",
+          "datetime": "2026-07-31T18:24:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2374.JPEG",
+          "datetime": "2026-07-31T18:27:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2375.JPEG",
+          "datetime": "2026-07-31T18:44:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2376.JPEG",
+          "datetime": "2026-07-31T19:01:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2380.JPEG",
+          "datetime": "2026-07-31T19:04:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2381.JPEG",
+          "datetime": "2026-07-31T19:05:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2382.JPEG",
+          "datetime": "2026-07-31T19:05:38",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2402.JPEG",
+          "datetime": "2026-07-31T19:44:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2404.JPEG",
+          "datetime": "2026-07-31T19:44:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2416.JPEG",
+          "datetime": "2026-07-31T20:27:50",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Zion",
+      "startDate": "2026-07-31",
+      "endDate": "2026-08-01",
+      "images": [
+        {
+          "filename": "IMG_2427.JPEG",
+          "datetime": "2026-07-31T20:54:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2431.JPEG",
+          "datetime": "2026-07-31T20:55:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2435.JPEG",
+          "datetime": "2026-07-31T20:57:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2444.JPEG",
+          "datetime": "2026-07-31T21:08:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2446.JPEG",
+          "datetime": "2026-08-01T06:31:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2448.JPEG",
+          "datetime": "2026-08-01T06:39:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2449.JPEG",
+          "datetime": "2026-08-01T06:44:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2456.JPEG",
+          "datetime": "2026-08-01T10:59:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2461.JPG",
+          "datetime": "2026-08-01T11:23:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2466.JPEG",
+          "datetime": "2026-08-01T11:36:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2471.JPEG",
+          "datetime": "2026-08-01T11:40:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2473.JPEG",
+          "datetime": "2026-08-01T11:40:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2481.JPEG",
+          "datetime": "2026-08-01T11:40:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2487.JPEG",
+          "datetime": "2026-08-01T12:12:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2491.JPEG",
+          "datetime": "2026-08-01T12:38:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2495.JPEG",
+          "datetime": "2026-08-01T13:21:55",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2497.JPEG",
+          "datetime": "2026-08-01T13:21:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2499.JPEG",
+          "datetime": "2026-08-01T13:22:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2506.JPEG",
+          "datetime": "2026-08-01T13:26:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2508.JPEG",
+          "datetime": "2026-08-01T13:27:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2509.JPEG",
+          "datetime": "2026-08-01T15:32:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2511.JPEG",
+          "datetime": "2026-08-01T15:33:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2515.JPEG",
+          "datetime": "2026-08-01T15:47:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2516.JPEG",
+          "datetime": "2026-08-01T16:00:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2542.JPEG",
+          "datetime": "2026-08-01T16:09:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2545.JPEG",
+          "datetime": "2026-08-01T16:10:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2549.JPEG",
+          "datetime": "2026-08-01T16:12:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2557.JPEG",
+          "datetime": "2026-08-01T16:15:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2559.JPEG",
+          "datetime": "2026-08-01T16:16:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2571.JPEG",
+          "datetime": "2026-08-01T16:21:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2572.JPEG",
+          "datetime": "2026-08-01T16:22:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2573.JPEG",
+          "datetime": "2026-08-01T16:23:57",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2583.JPEG",
+          "datetime": "2026-08-01T16:40:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2586.JPEG",
+          "datetime": "2026-08-01T17:32:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2588.JPEG",
+          "datetime": "2026-08-01T17:32:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2589.JPEG",
+          "datetime": "2026-08-01T17:32:55",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Bryce Canyon",
+      "startDate": "2026-08-01",
+      "endDate": "2026-08-02",
+      "images": [
+        {
+          "filename": "IMG_2594.JPEG",
+          "datetime": "2026-08-01T20:27:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2595.JPEG",
+          "datetime": "2026-08-01T20:28:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2597.JPEG",
+          "datetime": "2026-08-02T09:57:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2598.JPEG",
+          "datetime": "2026-08-02T10:12:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2599.JPEG",
+          "datetime": "2026-08-02T10:28:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2602.JPEG",
+          "datetime": "2026-08-02T10:29:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2603.JPEG",
+          "datetime": "2026-08-02T10:35:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2604.JPEG",
+          "datetime": "2026-08-02T10:35:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2605.JPEG",
+          "datetime": "2026-08-02T10:35:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2606.JPEG",
+          "datetime": "2026-08-02T10:36:56",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2607.JPEG",
+          "datetime": "2026-08-02T10:41:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2608.JPEG",
+          "datetime": "2026-08-02T11:09:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2609.JPEG",
+          "datetime": "2026-08-02T11:11:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2610.JPEG",
+          "datetime": "2026-08-02T11:14:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2611.JPEG",
+          "datetime": "2026-08-02T11:19:09",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2612.JPEG",
+          "datetime": "2026-08-02T11:19:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2613.JPEG",
+          "datetime": "2026-08-02T11:21:05",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2615.JPEG",
+          "datetime": "2026-08-02T11:24:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2616.JPEG",
+          "datetime": "2026-08-02T11:26:30",
           "hero": false
         }
       ]

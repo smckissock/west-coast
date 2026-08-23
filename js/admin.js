@@ -303,6 +303,144 @@
     });
   }
 
+  const WEEKDAYS = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const MONTHS = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  function datePart(iso) {
+    const match = String(iso || "").match(/^(\d{4}-\d{2}-\d{2})/);
+    return match ? match[1] : "";
+  }
+
+  function parseYmd(ymd) {
+    const match = String(ymd || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) {
+      return null;
+    }
+    return {
+      year: Number(match[1]),
+      month: Number(match[2]),
+      day: Number(match[3]),
+    };
+  }
+
+  function datesFromDatetimes(datetimes) {
+    const dates = [];
+    datetimes.forEach(function (iso) {
+      const day = datePart(iso);
+      if (day) {
+        dates.push(day);
+      }
+    });
+    if (!dates.length) {
+      return null;
+    }
+    dates.sort();
+    return { startDate: dates[0], endDate: dates[dates.length - 1] };
+  }
+
+  function datesForLeg(legId) {
+    return datesFromDatetimes(
+      photosInLeg(legId).map(function (photo) {
+        return photo.datetime;
+      })
+    );
+  }
+
+  function earliestDatetime(datetimes) {
+    let earliest = "";
+    datetimes.forEach(function (iso) {
+      const value = String(iso || "");
+      if (!datePart(value)) {
+        return;
+      }
+      if (!earliest || value < earliest) {
+        earliest = value;
+      }
+    });
+    return earliest;
+  }
+
+  function earliestForLeg(legId) {
+    return earliestDatetime(
+      photosInLeg(legId).map(function (photo) {
+        return photo.datetime;
+      })
+    );
+  }
+
+  function weekdayName(parts) {
+    const date = new Date(parts.year, parts.month - 1, parts.day, 12, 0, 0);
+    return WEEKDAYS[date.getDay()];
+  }
+
+  function formatDay(parts, includeYear) {
+    return (
+      weekdayName(parts) +
+      " " +
+      MONTHS[parts.month - 1] +
+      " " +
+      parts.day +
+      (includeYear ? " " + parts.year : "")
+    );
+  }
+
+  function formatDateRange(startDate, endDate) {
+    const start = parseYmd(startDate);
+    const end = parseYmd(endDate || startDate);
+    if (!start) {
+      return "";
+    }
+    if (!end || startDate === endDate) {
+      return formatDay(start, true);
+    }
+    if (start.year === end.year) {
+      return formatDay(start, false) + " - " + formatDay(end, true);
+    }
+    return formatDay(start, true) + " - " + formatDay(end, true);
+  }
+
+  function sortLegsByStart() {
+    legs.sort(function (a, b) {
+      const aStart = earliestForLeg(a.id);
+      const bStart = earliestForLeg(b.id);
+      if (!aStart && !bStart) {
+        return a.title.localeCompare(b.title);
+      }
+      if (!aStart) {
+        return 1;
+      }
+      if (!bStart) {
+        return -1;
+      }
+      if (aStart !== bStart) {
+        return aStart < bStart ? -1 : 1;
+      }
+      return a.title.localeCompare(b.title);
+    });
+  }
+
   function escapeHtml(value) {
     return String(value)
       .replace(/&/g, "&amp;")
@@ -387,13 +525,22 @@
       .map(function (leg) {
         const count = photosInLeg(leg.id).length;
         const active = leg.id === activeLegId ? " is-active" : "";
+        const dates = datesForLeg(leg.id);
+        const range = dates
+          ? formatDateRange(dates.startDate, dates.endDate)
+          : "";
+        const dateLine = range
+          ? '<span class="leg-item-dates">' + escapeHtml(range) + "</span>"
+          : "";
         return (
           '<li><button type="button" class="leg-item' +
           active +
           '" data-select-leg="' +
           leg.id +
-          '"><span>' +
+          '"><span class="leg-item-text"><span class="leg-item-title">' +
           escapeHtml(leg.title) +
+          "</span>" +
+          dateLine +
           '</span><span class="count">' +
           count +
           "</span></button></li>"
@@ -425,12 +572,18 @@
         leg.id +
         '">Add selected</button>'
       : "";
+    const dates = datesForLeg(leg.id);
+    const range = dates ? formatDateRange(dates.startDate, dates.endDate) : "";
+    const dateLine = range
+      ? '<p class="leg-dates">' + escapeHtml(range) + "</p>"
+      : "";
     editorEl.innerHTML =
       '<div class="leg-head">' +
       '<label class="title-label" for="edit-title">Editing</label>' +
       '<input id="edit-title" type="text" value="' +
       escapeHtml(leg.title) +
       '">' +
+      dateLine +
       '<div class="row">' +
       leftover +
       '<button type="button" class="ghost" data-remove-leg="' +
@@ -444,6 +597,7 @@
   }
 
   function render() {
+    sortLegsByStart();
     renderLegList();
     renderInbox();
     renderEditor();
@@ -477,6 +631,7 @@
   }
 
   function buildTrip() {
+    sortLegsByStart();
     return {
       title: "West Coast Trip",
       legs: legs.map(function (leg) {
@@ -487,7 +642,18 @@
             hero: photo.id === leg.heroId,
           };
         });
-        return { title: leg.title, images: images };
+        const dates = datesFromDatetimes(
+          images.map(function (image) {
+            return image.datetime;
+          })
+        );
+        const out = { title: leg.title };
+        if (dates) {
+          out.startDate = dates.startDate;
+          out.endDate = dates.endDate;
+        }
+        out.images = images;
+        return out;
       }),
     };
   }
@@ -616,6 +782,7 @@
     const leg = activeLeg();
     if (leg) {
       leg.title = event.target.value;
+      sortLegsByStart();
       renderLegList();
     }
   });
