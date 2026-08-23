@@ -1,5 +1,7 @@
 # West Coast Trip
 
+**Live album:** [https://smckissock.github.io/west-coast/](https://smckissock.github.io/west-coast/#/)
+
 A static photo album for GitHub Pages, plus a local admin page that writes `trip.json`.
 
 The album and the admin are separate. The public site has no admin menu. Open `admin.html` on your computer, save `trip.json`, commit it with the files in `photos/`, and GitHub Pages serves the album.
@@ -8,7 +10,7 @@ The album and the admin are separate. The public site has no admin menu. Open `a
 
 Visitors open `index.html`. It reads `trip.json`. Home cards and site grids use smaller images in `thumbs/`. Fullscreen photos still come from `photos/`.
 
-- Home: trip date range under the title, then one card per site (title, state, date range, hero photo)
+- Home: trip date range under the title, a western US map with straight lines between stops, then one card per site (title, state, date range, hero photo)
 - Site: title with state to the right, date range, optional description, then thumbnails with date/time from `trip.json`
 - Photo: fullscreen view with a back button
 
