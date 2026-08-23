@@ -233,7 +233,7 @@
       ]
     },
     {
-      "title": "Pasadena",
+      "title": "Pasadena / Gamble House",
       "state": "California",
       "startDate": "2026-07-28",
       "endDate": "2026-07-28",
@@ -1208,7 +1208,7 @@
         {
           "filename": "IMG_2759.JPEG",
           "datetime": "2026-08-05T07:53:39",
-          "hero": true
+          "hero": false
         },
         {
           "filename": "IMG_2760.JPEG",
@@ -1273,7 +1273,7 @@
         {
           "filename": "IMG_2785.JPEG",
           "datetime": "2026-08-05T14:21:48",
-          "hero": false
+          "hero": true
         },
         {
           "filename": "IMG_2786.JPEG",
