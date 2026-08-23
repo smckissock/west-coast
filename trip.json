@@ -3,6 +3,7 @@
   "legs": [
     {
       "title": "Santa Monica",
+      "state": "California",
       "startDate": "2026-07-24",
       "endDate": "2026-07-25",
       "images": [
@@ -69,7 +70,8 @@
       ]
     },
     {
-      "title": "Los Angeles",
+      "title": "Hollywood",
+      "state": "California",
       "startDate": "2026-07-25",
       "endDate": "2026-07-27",
       "images": [
@@ -232,6 +234,7 @@
     },
     {
       "title": "Pasadena",
+      "state": "California",
       "startDate": "2026-07-28",
       "endDate": "2026-07-28",
       "images": [
@@ -349,6 +352,7 @@
     },
     {
       "title": "Las Vegas",
+      "state": "Nevada",
       "startDate": "2026-07-28",
       "endDate": "2026-07-30",
       "images": [
@@ -446,6 +450,7 @@
     },
     {
       "title": "Hoover Dam",
+      "state": "Nevada",
       "startDate": "2026-07-30",
       "endDate": "2026-07-30",
       "images": [
@@ -473,6 +478,7 @@
     },
     {
       "title": "Grand Canyon",
+      "state": "Arizona",
       "startDate": "2026-07-30",
       "endDate": "2026-07-31",
       "images": [
@@ -640,6 +646,7 @@
     },
     {
       "title": "Horseshoe Bend",
+      "state": "Colorado",
       "startDate": "2026-07-31",
       "endDate": "2026-07-31",
       "images": [
@@ -716,7 +723,8 @@
       ]
     },
     {
-      "title": "Zion",
+      "title": "Zion National Park",
+      "state": "Utah",
       "startDate": "2026-07-31",
       "endDate": "2026-08-01",
       "images": [
@@ -904,6 +912,7 @@
     },
     {
       "title": "Bryce Canyon",
+      "state": "Utah",
       "startDate": "2026-08-01",
       "endDate": "2026-08-02",
       "images": [
@@ -1000,6 +1009,1375 @@
         {
           "filename": "IMG_2616.JPEG",
           "datetime": "2026-08-02T11:26:30",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Manzanar - Japanese Internment Camp",
+      "state": "California",
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-03",
+      "images": [
+        {
+          "filename": "IMG_2628.JPEG",
+          "datetime": "2026-08-03T16:41:40",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2632.JPEG",
+          "datetime": "2026-08-03T16:42:25",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2633.JPEG",
+          "datetime": "2026-08-03T16:43:38",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2634.JPEG",
+          "datetime": "2026-08-03T16:43:39",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2636.JPEG",
+          "datetime": "2026-08-03T16:44:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2637.JPEG",
+          "datetime": "2026-08-03T16:44:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2640.JPEG",
+          "datetime": "2026-08-03T16:46:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2641.JPEG",
+          "datetime": "2026-08-03T16:48:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2648.JPEG",
+          "datetime": "2026-08-03T16:53:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2649.JPEG",
+          "datetime": "2026-08-03T16:53:19",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Yosemite",
+      "state": "California",
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-05",
+      "images": [
+        {
+          "filename": "IMG_2650.JPEG",
+          "datetime": "2026-08-03T20:43:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2651.JPEG",
+          "datetime": "2026-08-04T07:13:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2653.JPEG",
+          "datetime": "2026-08-04T07:18:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2665.JPEG",
+          "datetime": "2026-08-04T08:59:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2673.JPEG",
+          "datetime": "2026-08-04T09:07:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2686.JPEG",
+          "datetime": "2026-08-04T10:47:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2689.JPEG",
+          "datetime": "2026-08-04T10:51:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2690.JPEG",
+          "datetime": "2026-08-04T10:51:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2691.JPEG",
+          "datetime": "2026-08-04T10:53:02",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2696.JPEG",
+          "datetime": "2026-08-04T11:17:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2697.JPEG",
+          "datetime": "2026-08-04T11:17:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2700.JPEG",
+          "datetime": "2026-08-04T11:19:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2702.JPEG",
+          "datetime": "2026-08-04T11:19:56",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2705.JPEG",
+          "datetime": "2026-08-04T11:41:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2718.JPEG",
+          "datetime": "2026-08-04T12:46:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2719.JPEG",
+          "datetime": "2026-08-04T12:46:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2720.JPEG",
+          "datetime": "2026-08-04T12:46:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2738.JPEG",
+          "datetime": "2026-08-04T14:38:56",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2742.JPEG",
+          "datetime": "2026-08-04T14:40:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2744.JPEG",
+          "datetime": "2026-08-04T14:42:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2751.JPEG",
+          "datetime": "2026-08-04T17:16:12",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2752.JPEG",
+          "datetime": "2026-08-04T17:21:18",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2753.JPEG",
+          "datetime": "2026-08-04T17:24:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2754.JPEG",
+          "datetime": "2026-08-05T07:09:01",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Monterey",
+      "state": "California",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-05",
+      "images": [
+        {
+          "filename": "IMG_2759.JPEG",
+          "datetime": "2026-08-05T07:53:39",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2760.JPEG",
+          "datetime": "2026-08-05T07:53:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2761.JPEG",
+          "datetime": "2026-08-05T07:54:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2765.JPEG",
+          "datetime": "2026-08-05T08:08:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2768.JPEG",
+          "datetime": "2026-08-05T09:58:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2770.JPEG",
+          "datetime": "2026-08-05T10:10:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2771.JPEG",
+          "datetime": "2026-08-05T10:17:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2774.JPEG",
+          "datetime": "2026-08-05T10:45:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2775.JPEG",
+          "datetime": "2026-08-05T10:56:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2777.JPEG",
+          "datetime": "2026-08-05T11:23:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2779.JPEG",
+          "datetime": "2026-08-05T11:23:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2783.JPEG",
+          "datetime": "2026-08-05T12:42:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2784.JPEG",
+          "datetime": "2026-08-05T13:11:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2785.JPEG",
+          "datetime": "2026-08-05T14:21:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2786.JPEG",
+          "datetime": "2026-08-05T14:22:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2787.JPEG",
+          "datetime": "2026-08-05T14:22:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2788.JPEG",
+          "datetime": "2026-08-05T14:22:54",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2789.JPEG",
+          "datetime": "2026-08-05T14:23:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2790.JPEG",
+          "datetime": "2026-08-05T15:46:20",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2791.JPEG",
+          "datetime": "2026-08-05T15:52:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2793.JPEG",
+          "datetime": "2026-08-05T16:19:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2796.JPEG",
+          "datetime": "2026-08-05T17:10:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2798.JPEG",
+          "datetime": "2026-08-05T17:15:09",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2799.JPEG",
+          "datetime": "2026-08-05T17:55:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2801.JPEG",
+          "datetime": "2026-08-05T18:03:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2802.JPEG",
+          "datetime": "2026-08-05T18:10:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2804.JPEG",
+          "datetime": "2026-08-05T18:19:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2808.JPEG",
+          "datetime": "2026-08-05T20:40:04",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "San Francisco",
+      "state": "California",
+      "startDate": "2026-08-05",
+      "endDate": "2026-08-07",
+      "images": [
+        {
+          "filename": "IMG_2824.JPEG",
+          "datetime": "2026-08-05T21:37:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2825.JPEG",
+          "datetime": "2026-08-05T22:32:24",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2827.JPEG",
+          "datetime": "2026-08-06T08:55:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2828.JPEG",
+          "datetime": "2026-08-06T09:02:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2829.JPEG",
+          "datetime": "2026-08-06T11:58:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2830.JPEG",
+          "datetime": "2026-08-06T11:58:57",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2831.JPEG",
+          "datetime": "2026-08-06T12:06:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2832.JPEG",
+          "datetime": "2026-08-06T12:37:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2834.JPEG",
+          "datetime": "2026-08-06T13:06:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2836.JPEG",
+          "datetime": "2026-08-06T13:56:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2837.JPEG",
+          "datetime": "2026-08-06T13:59:17",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2839.JPEG",
+          "datetime": "2026-08-06T14:23:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2843.JPEG",
+          "datetime": "2026-08-06T17:38:48",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2844.JPEG",
+          "datetime": "2026-08-06T17:39:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2845.JPEG",
+          "datetime": "2026-08-06T17:43:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2846.JPEG",
+          "datetime": "2026-08-06T18:04:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2847.JPEG",
+          "datetime": "2026-08-06T18:08:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2848.JPEG",
+          "datetime": "2026-08-06T18:15:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2850.JPEG",
+          "datetime": "2026-08-06T18:19:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2851.JPEG",
+          "datetime": "2026-08-06T18:19:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2857.JPEG",
+          "datetime": "2026-08-06T18:20:24",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2859.JPEG",
+          "datetime": "2026-08-07T07:25:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2861.JPEG",
+          "datetime": "2026-08-07T08:09:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2862.JPEG",
+          "datetime": "2026-08-07T08:10:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2863.JPEG",
+          "datetime": "2026-08-07T08:11:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2864.JPEG",
+          "datetime": "2026-08-07T08:13:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2866.JPEG",
+          "datetime": "2026-08-07T08:18:26",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2870.JPEG",
+          "datetime": "2026-08-07T10:46:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2874.JPEG",
+          "datetime": "2026-08-07T10:47:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2879.JPEG",
+          "datetime": "2026-08-07T10:49:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2883.JPEG",
+          "datetime": "2026-08-07T11:11:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2884.JPEG",
+          "datetime": "2026-08-07T11:17:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2885.JPEG",
+          "datetime": "2026-08-07T11:20:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2886.JPEG",
+          "datetime": "2026-08-07T11:20:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2887.JPEG",
+          "datetime": "2026-08-07T11:22:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2888.JPEG",
+          "datetime": "2026-08-07T11:27:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2889.JPEG",
+          "datetime": "2026-08-07T11:28:02",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2890.JPEG",
+          "datetime": "2026-08-07T11:39:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2891.JPEG",
+          "datetime": "2026-08-07T11:39:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2892.JPEG",
+          "datetime": "2026-08-07T11:53:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2893.JPEG",
+          "datetime": "2026-08-07T11:53:39",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2894.JPEG",
+          "datetime": "2026-08-07T11:59:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2896.JPEG",
+          "datetime": "2026-08-07T12:02:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2897.JPEG",
+          "datetime": "2026-08-07T12:03:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2899.JPEG",
+          "datetime": "2026-08-07T12:11:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2900.JPEG",
+          "datetime": "2026-08-07T12:21:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2902.JPEG",
+          "datetime": "2026-08-07T12:50:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2903.JPEG",
+          "datetime": "2026-08-07T12:53:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2904.JPEG",
+          "datetime": "2026-08-07T13:53:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2905.JPEG",
+          "datetime": "2026-08-07T13:53:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2908.JPEG",
+          "datetime": "2026-08-07T14:13:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2909.JPEG",
+          "datetime": "2026-08-07T14:17:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2912.JPEG",
+          "datetime": "2026-08-07T14:47:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2915.JPEG",
+          "datetime": "2026-08-07T14:48:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2916.JPEG",
+          "datetime": "2026-08-07T14:49:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2917.JPEG",
+          "datetime": "2026-08-07T14:49:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2918.JPEG",
+          "datetime": "2026-08-07T14:49:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2921.JPEG",
+          "datetime": "2026-08-07T14:50:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2922.JPEG",
+          "datetime": "2026-08-07T14:50:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2924.JPEG",
+          "datetime": "2026-08-07T14:51:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2925.JPEG",
+          "datetime": "2026-08-07T14:51:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2929.JPEG",
+          "datetime": "2026-08-07T14:53:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2930.JPEG",
+          "datetime": "2026-08-07T14:57:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2933.JPEG",
+          "datetime": "2026-08-07T14:58:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2934.JPEG",
+          "datetime": "2026-08-07T14:58:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2935.JPEG",
+          "datetime": "2026-08-07T14:58:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2936.JPEG",
+          "datetime": "2026-08-07T15:13:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2939.JPEG",
+          "datetime": "2026-08-07T15:44:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2940.JPEG",
+          "datetime": "2026-08-07T15:45:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2943.JPEG",
+          "datetime": "2026-08-07T16:03:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2944.JPEG",
+          "datetime": "2026-08-07T16:03:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2945.JPEG",
+          "datetime": "2026-08-07T16:09:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2947.JPEG",
+          "datetime": "2026-08-07T20:16:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2948.JPEG",
+          "datetime": "2026-08-07T20:16:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2949.JPEG",
+          "datetime": "2026-08-07T20:17:09",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2950.JPEG",
+          "datetime": "2026-08-07T20:17:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2951.JPEG",
+          "datetime": "2026-08-07T20:17:26",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2953.JPEG",
+          "datetime": "2026-08-07T20:31:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2954.JPEG",
+          "datetime": "2026-08-07T20:31:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2955.JPEG",
+          "datetime": "2026-08-07T20:36:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2958.JPEG",
+          "datetime": "2026-08-07T20:58:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2959.JPEG",
+          "datetime": "2026-08-07T20:58:57",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Charles Shultz Museum",
+      "state": "California",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-08",
+      "images": [
+        {
+          "filename": "IMG_2966.JPEG",
+          "datetime": "2026-08-08T10:22:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2969.JPEG",
+          "datetime": "2026-08-08T10:22:21",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2970.JPEG",
+          "datetime": "2026-08-08T10:37:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2971.JPEG",
+          "datetime": "2026-08-08T11:18:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2972.JPEG",
+          "datetime": "2026-08-08T11:59:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2973.JPEG",
+          "datetime": "2026-08-08T12:53:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2974.JPEG",
+          "datetime": "2026-08-08T13:02:06",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Pacific Coast Highway / Redwoods",
+      "state": "California",
+      "startDate": "2026-08-08",
+      "endDate": "2026-08-10",
+      "images": [
+        {
+          "filename": "IMG_2975.JPEG",
+          "datetime": "2026-08-08T16:59:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2978.JPEG",
+          "datetime": "2026-08-08T17:01:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2979.JPEG",
+          "datetime": "2026-08-08T17:34:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2980.JPEG",
+          "datetime": "2026-08-08T17:34:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2981.JPEG",
+          "datetime": "2026-08-08T17:35:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2982.JPEG",
+          "datetime": "2026-08-08T17:36:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2984.JPEG",
+          "datetime": "2026-08-08T17:39:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2985.JPEG",
+          "datetime": "2026-08-08T17:40:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2986.JPEG",
+          "datetime": "2026-08-08T18:12:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2987.JPEG",
+          "datetime": "2026-08-08T18:12:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2989.JPEG",
+          "datetime": "2026-08-08T18:24:57",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2990.JPEG",
+          "datetime": "2026-08-08T18:29:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2991.JPEG",
+          "datetime": "2026-08-08T18:52:26",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2992.JPEG",
+          "datetime": "2026-08-08T18:52:28",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2994.JPEG",
+          "datetime": "2026-08-08T20:41:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2995.JPEG",
+          "datetime": "2026-08-09T08:27:02",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2996.JPEG",
+          "datetime": "2026-08-09T08:27:18",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2998.JPEG",
+          "datetime": "2026-08-09T08:27:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3001.JPEG",
+          "datetime": "2026-08-09T10:13:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3002.JPEG",
+          "datetime": "2026-08-09T10:13:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3003.JPEG",
+          "datetime": "2026-08-09T10:13:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3004.JPEG",
+          "datetime": "2026-08-09T10:17:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3005.JPEG",
+          "datetime": "2026-08-09T10:24:24",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3006.JPEG",
+          "datetime": "2026-08-09T10:24:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3007.JPEG",
+          "datetime": "2026-08-09T10:31:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3009.JPEG",
+          "datetime": "2026-08-09T10:33:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3010.JPEG",
+          "datetime": "2026-08-09T10:37:33",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3011.JPEG",
+          "datetime": "2026-08-09T15:14:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3012.JPEG",
+          "datetime": "2026-08-09T15:16:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3013.JPEG",
+          "datetime": "2026-08-09T15:17:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3017.JPEG",
+          "datetime": "2026-08-09T15:53:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3019.JPEG",
+          "datetime": "2026-08-09T16:12:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3020.JPEG",
+          "datetime": "2026-08-09T16:12:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3022.JPEG",
+          "datetime": "2026-08-09T19:18:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3023.JPEG",
+          "datetime": "2026-08-09T19:18:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3024.JPEG",
+          "datetime": "2026-08-09T19:23:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3025.JPEG",
+          "datetime": "2026-08-10T07:11:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3026.JPEG",
+          "datetime": "2026-08-10T07:13:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3027.JPEG",
+          "datetime": "2026-08-10T07:17:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3029.JPEG",
+          "datetime": "2026-08-10T07:24:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3032.JPEG",
+          "datetime": "2026-08-10T11:16:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3034.JPEG",
+          "datetime": "2026-08-10T11:34:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3035.JPEG",
+          "datetime": "2026-08-10T11:36:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3036.JPEG",
+          "datetime": "2026-08-10T14:03:52",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Seattle",
+      "state": "Washington",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-12",
+      "images": [
+        {
+          "filename": "IMG_3037.JPEG",
+          "datetime": "2026-08-10T18:35:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3039.JPEG",
+          "datetime": "2026-08-10T18:36:10",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3040.JPEG",
+          "datetime": "2026-08-10T20:19:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3041.JPEG",
+          "datetime": "2026-08-10T21:12:01",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3042.JPEG",
+          "datetime": "2026-08-11T09:16:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3044.JPEG",
+          "datetime": "2026-08-11T09:17:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3045.JPEG",
+          "datetime": "2026-08-11T09:18:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3046.JPEG",
+          "datetime": "2026-08-11T09:30:22",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3047.JPEG",
+          "datetime": "2026-08-11T09:30:27",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3048.JPEG",
+          "datetime": "2026-08-11T09:30:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3049.JPEG",
+          "datetime": "2026-08-11T09:30:38",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3050.JPEG",
+          "datetime": "2026-08-11T09:30:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3051.JPEG",
+          "datetime": "2026-08-11T09:33:20",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3052.JPEG",
+          "datetime": "2026-08-11T09:33:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3054.JPEG",
+          "datetime": "2026-08-11T09:44:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3055.JPEG",
+          "datetime": "2026-08-11T09:45:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3057.JPEG",
+          "datetime": "2026-08-11T09:52:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3058.JPEG",
+          "datetime": "2026-08-11T09:53:40",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3059.JPEG",
+          "datetime": "2026-08-11T09:54:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3060.JPEG",
+          "datetime": "2026-08-11T09:56:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3061.JPEG",
+          "datetime": "2026-08-11T09:57:56",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3062.JPEG",
+          "datetime": "2026-08-11T09:58:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3065.JPEG",
+          "datetime": "2026-08-11T09:59:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3066.JPEG",
+          "datetime": "2026-08-11T10:05:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3067.JPEG",
+          "datetime": "2026-08-11T10:05:54",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3069.JPEG",
+          "datetime": "2026-08-11T10:16:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3070.JPEG",
+          "datetime": "2026-08-11T10:18:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3071.JPEG",
+          "datetime": "2026-08-11T10:19:57",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3073.JPEG",
+          "datetime": "2026-08-11T10:22:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3074.JPEG",
+          "datetime": "2026-08-11T10:22:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3079.JPEG",
+          "datetime": "2026-08-11T11:02:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3082.JPEG",
+          "datetime": "2026-08-11T11:33:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3083.JPEG",
+          "datetime": "2026-08-11T11:40:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3084.JPEG",
+          "datetime": "2026-08-11T12:45:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3086.JPEG",
+          "datetime": "2026-08-11T14:41:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3087.JPEG",
+          "datetime": "2026-08-11T14:53:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3088.JPEG",
+          "datetime": "2026-08-11T16:03:35",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3089.JPEG",
+          "datetime": "2026-08-11T16:04:02",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3090.JPEG",
+          "datetime": "2026-08-11T19:45:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3091.JPEG",
+          "datetime": "2026-08-11T20:17:39",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3093.JPEG",
+          "datetime": "2026-08-12T06:33:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3094.JPEG",
+          "datetime": "2026-08-12T10:45:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3095.JPEG",
+          "datetime": "2026-08-12T11:58:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3096.JPEG",
+          "datetime": "2026-08-12T12:29:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3097.JPEG",
+          "datetime": "2026-08-12T13:50:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3098.JPEG",
+          "datetime": "2026-08-12T13:50:37",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3100.JPEG",
+          "datetime": "2026-08-12T13:53:17",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3103.JPEG",
+          "datetime": "2026-08-12T16:16:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3104.JPEG",
+          "datetime": "2026-08-12T16:17:16",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3105.JPEG",
+          "datetime": "2026-08-12T16:19:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3107.JPEG",
+          "datetime": "2026-08-12T16:42:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3109.JPEG",
+          "datetime": "2026-08-12T16:42:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3110.JPEG",
+          "datetime": "2026-08-12T16:43:40",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3113.JPEG",
+          "datetime": "2026-08-12T20:37:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3115.JPEG",
+          "datetime": "2026-08-12T20:41:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3117.JPEG",
+          "datetime": "2026-08-12T20:45:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3118.JPEG",
+          "datetime": "2026-08-12T20:45:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3120.JPEG",
+          "datetime": "2026-08-12T20:46:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3121.JPEG",
+          "datetime": "2026-08-12T20:46:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3122.JPEG",
+          "datetime": "2026-08-12T20:47:31",
+          "hero": true
+        },
+        {
+          "filename": "IMG_3123.JPEG",
+          "datetime": "2026-08-12T20:47:34",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3124.JPEG",
+          "datetime": "2026-08-12T20:47:36",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Will at College",
+      "state": "Pennsylvania",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-16",
+      "images": [
+        {
+          "filename": "IMG_3148.JPEG",
+          "datetime": "2026-08-15T13:14:39",
+          "hero": true
+        },
+        {
+          "filename": "IMG_3154.JPEG",
+          "datetime": "2026-08-15T18:06:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3157.JPEG",
+          "datetime": "2026-08-16T10:01:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3163.JPEG",
+          "datetime": "2026-08-16T16:14:37",
           "hero": false
         }
       ]

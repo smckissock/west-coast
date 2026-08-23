@@ -8,8 +8,8 @@ The album and the admin are separate. The public site has no admin menu. Open `a
 
 Visitors open `index.html`. It reads `trip.json` and images in `photos/`.
 
-- Home: trip date range under the title, then one card per trip leg (title, date range, hero photo)
-- Leg: date range under the title, then thumbnails with date/time from `trip.json`
+- Home: trip date range under the title, then one card per site (title, state, date range, hero photo)
+- Site: title with state to the right, date range under it, then thumbnails with date/time from `trip.json`
 - Photo: fullscreen view with a back button
 
 Turn on Pages: **Settings → Pages → Deploy from branch `main` / root**.
@@ -18,8 +18,8 @@ Turn on Pages: **Settings → Pages → Deploy from branch `main` / root**.
 
 1. Put JPEG, WebP, or PNG files in `photos/` (flat folder, not nested). Convert HEIC first — browsers will not display it.
 2. From this folder run `python serve.py`, then open `http://127.0.0.1:8765/admin.html`.
-3. Existing legs appear in the left list, sorted by the earliest photo time — click one to edit its title, photos, and hero.
-4. Select a leg, then **Add photos** — files go straight onto that leg.
+3. Existing sites appear in the left list, sorted by the earliest photo time — click one to edit its title, state, photos, and hero.
+4. Select a site, then **Add photos** — files go straight onto that site.
 5. **Save trip.json** writes the file. If the local server cannot overwrite it, a save dialog asks you to replace `trip.json` in this repo.
 6. Commit `trip.json` and the images in `photos/`.
 
@@ -33,6 +33,7 @@ Date/time is read from JPEG EXIF (`DateTimeOriginal`) in the admin and stored on
   "legs": [
     {
       "title": "Pacific Coast Highway",
+      "state": "California",
       "startDate": "2026-08-10",
       "endDate": "2026-08-12",
       "images": [
@@ -47,4 +48,4 @@ Date/time is read from JPEG EXIF (`DateTimeOriginal`) in the admin and stored on
 }
 ```
 
-`filename` is the file name inside `photos/`. `startDate` and `endDate` are written on save from the photos in that leg. Empty legs omit both fields and sort last.
+`filename` is the file name inside `photos/`. `state` is the US state for that site. `startDate` and `endDate` are written on save from the photos in that site. Empty sites omit both date fields and sort last.

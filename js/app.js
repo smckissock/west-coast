@@ -261,14 +261,19 @@
         const dates = range
           ? '<p class="leg-card-dates">' + escapeHtml(range) + "</p>"
           : "";
+        const state = leg.state
+          ? '<p class="leg-card-state">' + escapeHtml(leg.state) + "</p>"
+          : "";
         return (
           '<a class="leg-card" href="#/leg/' +
           index +
           '">' +
           image +
-          '<div class="leg-card-body"><h2 class="leg-card-title">' +
+          '<div class="leg-card-body"><div class="leg-card-heading"><h2 class="leg-card-title">' +
           escapeHtml(leg.title) +
           "</h2>" +
+          state +
+          "</div>" +
           dates +
           "</div></a>"
         );
@@ -300,6 +305,9 @@
     const dates = range
       ? '<p class="leg-dates">' + escapeHtml(range) + "</p>"
       : "";
+    const state = leg.state
+      ? '<p class="site-state">' + escapeHtml(leg.state) + "</p>"
+      : "";
     const images = leg.images || [];
     const thumbs = images
       .map(function (image, photoIndex) {
@@ -322,9 +330,11 @@
     app.innerHTML =
       '<div class="page">' +
       '<a class="back" href="#/">Back to album</a>' +
-      '<header class="masthead"><h1>' +
+      '<header class="masthead"><div class="masthead-title-row"><h1>' +
       escapeHtml(leg.title) +
       "</h1>" +
+      state +
+      "</div>" +
       dates +
       "</header>" +
       (images.length

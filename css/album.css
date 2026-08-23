@@ -111,11 +111,33 @@ body {
   padding: 0.35rem 0.8rem 0.4rem;
 }
 
+.leg-card-heading,
+.masthead-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .leg-card-title {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.15;
+}
+
+.leg-card-state,
+.site-state {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.site-state {
+  font-size: 0.95rem;
 }
 
 .leg-card-dates,

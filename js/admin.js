@@ -211,7 +211,12 @@
   function loadTrip(data) {
     const incoming = data && Array.isArray(data.legs) ? data.legs : [];
     incoming.forEach(function (legData) {
-      const leg = { id: nextId, title: legData.title || "Untitled", heroId: null };
+      const leg = {
+        id: nextId,
+        title: legData.title || "Untitled",
+        state: legData.state || "",
+        heroId: null,
+      };
       nextId += 1;
       legs.push(leg);
       (legData.images || []).forEach(function (image) {
@@ -240,7 +245,7 @@
   async function addFiles(fileList) {
     const leg = activeLeg();
     if (!leg) {
-      setStatus("Add or select a leg first", "err");
+      setStatus("Add or select a site first", "err");
       return;
     }
     const incoming = Array.from(fileList).filter(isImageFile);
@@ -518,7 +523,7 @@
 
   function renderLegList() {
     if (!legs.length) {
-      legListEl.innerHTML = '<li class="empty">No legs yet.</li>';
+      legListEl.innerHTML = '<li class="empty">No sites yet.</li>';
       return;
     }
     legListEl.innerHTML = legs
@@ -537,8 +542,14 @@
           active +
           '" data-select-leg="' +
           leg.id +
-          '"><span class="leg-item-text"><span class="leg-item-title">' +
+          '"><span class="leg-item-text"><span class="leg-item-heading"><span class="leg-item-title">' +
           escapeHtml(leg.title) +
+          "</span>" +
+          (leg.state
+            ? '<span class="leg-item-state">' +
+              escapeHtml(leg.state) +
+              "</span>"
+            : "") +
           "</span>" +
           dateLine +
           '</span><span class="count">' +
@@ -553,7 +564,7 @@
     const leg = activeLeg();
     if (!leg) {
       editorEl.innerHTML =
-        '<p class="empty">Select a leg to edit, or add a new one.</p>';
+        '<p class="empty">Select a site to edit, or add a new one.</p>';
       return;
     }
     const items = photosInLeg(leg.id);
@@ -566,7 +577,7 @@
             });
           })
           .join("")
-      : '<p class="empty">No photos in this leg yet. Use Add photos to add them here.</p>';
+      : '<p class="empty">No photos in this site yet. Use Add photos to add them here.</p>';
     const leftover = unassignedPhotos().length
       ? '<button type="button" data-assign="' +
         leg.id +
@@ -580,17 +591,23 @@
     editorEl.innerHTML =
       '<div class="leg-head">' +
       '<label class="title-label" for="edit-title">Editing</label>' +
+      '<div class="title-row">' +
       '<input id="edit-title" type="text" value="' +
       escapeHtml(leg.title) +
       '">' +
+      '<label class="state-label" for="edit-state">State</label>' +
+      '<input id="edit-state" type="text" placeholder="California" value="' +
+      escapeHtml(leg.state || "") +
+      '">' +
+      "</div>" +
       dateLine +
       '<div class="row">' +
       leftover +
       '<button type="button" class="ghost" data-remove-leg="' +
       leg.id +
-      '">Remove leg</button>' +
+      '">Remove site</button>' +
       "</div></div>" +
-      '<p class="hint">Add photos goes to this leg. Click a photo to make it the hero.</p>' +
+      '<p class="hint">Add photos goes to this site. Click a photo to make it the hero.</p>' +
       '<div class="photo-grid">' +
       cards +
       "</div>";
@@ -648,6 +665,9 @@
           })
         );
         const out = { title: leg.title };
+        if (leg.state) {
+          out.state = String(leg.state).trim();
+        }
         if (dates) {
           out.startDate = dates.startDate;
           out.endDate = dates.endDate;
@@ -739,7 +759,7 @@
       legTitleInput.focus();
       return;
     }
-    const leg = { id: nextId, title: title, heroId: null };
+    const leg = { id: nextId, title: title, state: "", heroId: null };
     nextId += 1;
     legs.push(leg);
     activeLegId = leg.id;
@@ -749,7 +769,7 @@
 
   document.getElementById("add-photos").addEventListener("click", function () {
     if (!activeLeg()) {
-      setStatus("Add or select a leg first", "err");
+      setStatus("Add or select a site first", "err");
       return;
     }
     setStatus("");
@@ -776,13 +796,18 @@
   });
 
   editorEl.addEventListener("input", function (event) {
-    if (event.target.id !== "edit-title") {
+    const leg = activeLeg();
+    if (!leg) {
       return;
     }
-    const leg = activeLeg();
-    if (leg) {
+    if (event.target.id === "edit-title") {
       leg.title = event.target.value;
       sortLegsByStart();
+      renderLegList();
+      return;
+    }
+    if (event.target.id === "edit-state") {
+      leg.state = event.target.value;
       renderLegList();
     }
   });
