@@ -136,7 +136,14 @@ button:hover {
   padding: 1.5rem 0 4rem;
 }
 
+.editor {
+  min-width: 0;
+}
+
 .leg-panel {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -151,12 +158,20 @@ button:hover {
   gap: 0.4rem;
 }
 
+.leg-list li {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .leg-item {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: flex-start;
+  gap: 0.5rem;
   border-radius: 10px;
   padding: 0.65rem 0.75rem;
   background: #f4f7f5;
@@ -170,6 +185,7 @@ button:hover {
 }
 
 .leg-item .count {
+  flex: 0 0 auto;
   opacity: 0.75;
   font-size: 0.8rem;
 }
@@ -186,12 +202,13 @@ button:hover {
   white-space: nowrap;
 }
 
-.leg-item-dates,
-.leg-dates {
+.leg-item-dates {
   margin: 0;
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 500;
+  line-height: 1.25;
+  white-space: normal;
 }
 
 .leg-item.is-active .leg-item-dates {
@@ -200,7 +217,10 @@ button:hover {
 
 .leg-dates {
   width: 100%;
+  margin: 0;
+  color: var(--muted);
   font-size: 0.92rem;
+  font-weight: 500;
 }
 
 .new-leg {
@@ -219,6 +239,19 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+#edit-description {
+  display: block;
+  width: 100%;
+  min-height: 6rem;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: var(--card);
+  font: inherit;
+  resize: vertical;
 }
 
 #leg-title,
@@ -341,12 +374,9 @@ h2 {
 }
 
 .leg-head {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.35rem;
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 @media (min-width: 800px) {
@@ -355,7 +385,7 @@ h2 {
   }
 
   .layout {
-    grid-template-columns: 16.5rem 1fr;
+    grid-template-columns: 17rem minmax(0, 1fr);
     align-items: start;
   }
 

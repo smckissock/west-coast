@@ -149,6 +149,15 @@ body {
   line-height: 1.2;
 }
 
+.site-description {
+  margin: 0.85rem 0 0;
+  max-width: 42rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
 .masthead .leg-dates,
 .trip-dates {
   margin: 0.05rem 0 0;
@@ -211,7 +220,15 @@ body {
   padding: 0.85rem 1rem;
 }
 
-.viewer-back {
+.viewer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.viewer-back,
+.viewer-nav {
   appearance: none;
   border: 0;
   background: rgba(255, 255, 255, 0.12);
@@ -224,7 +241,9 @@ body {
 }
 
 .viewer-back:hover,
-.viewer-back:focus-visible {
+.viewer-back:focus-visible,
+.viewer-nav:hover,
+.viewer-nav:focus-visible {
   background: rgba(255, 255, 255, 0.22);
 }
 

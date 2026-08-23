@@ -4,6 +4,7 @@
     {
       "title": "Santa Monica",
       "state": "California",
+      "description": "We stayed in a hostel near Santa Monica Pier.",
       "startDate": "2026-07-24",
       "endDate": "2026-07-25",
       "images": [
@@ -72,6 +73,7 @@
     {
       "title": "Hollywood",
       "state": "California",
+      "description": "We stayed in a hotel in Hollywood within walking distance of the Chinese Theater, where we saw The Odyssey. We also walked to Yamashiro - \"Mountain Castle\" - and the Hollywood Bowl. Also in our days in LA: Grand Central Market, The Last Bookstore, Little Tokyo, Motion Picture Museum, Griffith Observatory, Getty Museum,  Beverly Hills, Greystone Mansion and Laurel Canyon.",
       "startDate": "2026-07-25",
       "endDate": "2026-07-27",
       "images": [
@@ -103,7 +105,7 @@
         {
           "filename": "IMG_1976.JPEG",
           "datetime": "2026-07-26T08:13:16",
-          "hero": true
+          "hero": false
         },
         {
           "filename": "IMG_1979.JPEG",
@@ -223,7 +225,7 @@
         {
           "filename": "IMG_2018.JPEG",
           "datetime": "2026-07-27T15:56:57",
-          "hero": false
+          "hero": true
         },
         {
           "filename": "IMG_2019.JPEG",
@@ -235,6 +237,7 @@
     {
       "title": "Pasadena / Gamble House",
       "state": "California",
+      "description": "We had a tour of Gamble House, designed by Greene and Greene in 1908.",
       "startDate": "2026-07-28",
       "endDate": "2026-07-28",
       "images": [
@@ -353,6 +356,7 @@
     {
       "title": "Las Vegas",
       "state": "Nevada",
+      "description": "Pinball Museum was the highlight of Las Vegas for us.  Maybe 200 working pinball machines dating from the 50s.",
       "startDate": "2026-07-28",
       "endDate": "2026-07-30",
       "images": [
@@ -451,6 +455,7 @@
     {
       "title": "Hoover Dam",
       "state": "Nevada",
+      "description": "Hoover Dam was closed for security reasons that nobody would explain. We just got photos of a donkey in the middle of the road.",
       "startDate": "2026-07-30",
       "endDate": "2026-07-30",
       "images": [
@@ -479,6 +484,7 @@
     {
       "title": "Grand Canyon",
       "state": "Arizona",
+      "description": "Did a small part of the Bright Angel trial. It very was hot.",
       "startDate": "2026-07-30",
       "endDate": "2026-07-31",
       "images": [
@@ -647,6 +653,7 @@
     {
       "title": "Horseshoe Bend",
       "state": "Colorado",
+      "description": "This is the Colorado river in Page, Colorado on the road between the Grand Canyon and Zion. Needed to walk in 110 degree weather, but not too bad.",
       "startDate": "2026-07-31",
       "endDate": "2026-07-31",
       "images": [
@@ -2039,6 +2046,7 @@
     {
       "title": "Seattle",
       "state": "Washington",
+      "description": "We met Paul in Seattle and he showed us his building plus and the Amazon spheres.",
       "startDate": "2026-08-10",
       "endDate": "2026-08-12",
       "images": [

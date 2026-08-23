@@ -216,6 +216,7 @@
         id: nextId,
         title: legData.title || "Untitled",
         state: legData.state || "",
+        description: legData.description || "",
         heroId: null,
       };
       nextId += 1;
@@ -427,6 +428,69 @@
     return formatDay(start, true) + " - " + formatDay(end, true);
   }
 
+  const SHORT_MONTHS = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  function formatDateRangeShort(startDate, endDate) {
+    const start = parseYmd(startDate);
+    const end = parseYmd(endDate || startDate);
+    if (!start) {
+      return "";
+    }
+    if (!end || startDate === endDate) {
+      return SHORT_MONTHS[start.month - 1] + " " + start.day + ", " + start.year;
+    }
+    if (start.year === end.year && start.month === end.month) {
+      return (
+        SHORT_MONTHS[start.month - 1] +
+        " " +
+        start.day +
+        "-" +
+        end.day +
+        ", " +
+        start.year
+      );
+    }
+    if (start.year === end.year) {
+      return (
+        SHORT_MONTHS[start.month - 1] +
+        " " +
+        start.day +
+        " - " +
+        SHORT_MONTHS[end.month - 1] +
+        " " +
+        end.day +
+        ", " +
+        start.year
+      );
+    }
+    return (
+      SHORT_MONTHS[start.month - 1] +
+      " " +
+      start.day +
+      ", " +
+      start.year +
+      " - " +
+      SHORT_MONTHS[end.month - 1] +
+      " " +
+      end.day +
+      ", " +
+      end.year
+    );
+  }
+
   function sortLegsByStart() {
     legs.sort(function (a, b) {
       const aStart = earliestForLeg(a.id);
@@ -533,7 +597,7 @@
         const active = leg.id === activeLegId ? " is-active" : "";
         const dates = datesForLeg(leg.id);
         const range = dates
-          ? formatDateRange(dates.startDate, dates.endDate)
+          ? formatDateRangeShort(dates.startDate, dates.endDate)
           : "";
         const dateLine = range
           ? '<span class="leg-item-dates">' + escapeHtml(range) + "</span>"
@@ -602,6 +666,10 @@
       '">' +
       "</div>" +
       dateLine +
+      '<label class="title-label" for="edit-description">Description</label>' +
+      '<textarea id="edit-description" rows="4" placeholder="Optional notes for this site">' +
+      escapeHtml(leg.description || "") +
+      "</textarea>" +
       '<div class="row">' +
       leftover +
       '<button type="button" class="ghost" data-remove-leg="' +
@@ -668,6 +736,9 @@
         const out = { title: leg.title };
         if (leg.state) {
           out.state = String(leg.state).trim();
+        }
+        if (leg.description && String(leg.description).trim()) {
+          out.description = String(leg.description).trim();
         }
         if (dates) {
           out.startDate = dates.startDate;
@@ -760,7 +831,7 @@
       legTitleInput.focus();
       return;
     }
-    const leg = { id: nextId, title: title, state: "", heroId: null };
+    const leg = { id: nextId, title: title, state: "", description: "", heroId: null };
     nextId += 1;
     legs.push(leg);
     activeLegId = leg.id;
@@ -810,6 +881,10 @@
     if (event.target.id === "edit-state") {
       leg.state = event.target.value;
       renderLegList();
+      return;
+    }
+    if (event.target.id === "edit-description") {
+      leg.description = event.target.value;
     }
   });
 

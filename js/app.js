@@ -324,6 +324,9 @@
     const state = leg.state
       ? '<p class="site-state">' + escapeHtml(leg.state) + "</p>"
       : "";
+    const description = (leg.description || "").trim()
+      ? '<p class="site-description">' + escapeHtml(leg.description.trim()) + "</p>"
+      : "";
     const images = leg.images || [];
     const thumbs = images
       .map(function (image, photoIndex) {
@@ -345,17 +348,20 @@
 
     app.innerHTML =
       '<div class="page">' +
-      '<a class="back" href="#/">Back to album</a>' +
+      '<a class="back" href="#/">Back to ' +
+      escapeHtml(title) +
+      "</a>" +
       '<header class="masthead"><div class="masthead-title-row"><h1>' +
       escapeHtml(leg.title) +
       "</h1>" +
       state +
       "</div>" +
       dates +
+      description +
       "</header>" +
       (images.length
         ? '<div class="thumb-grid">' + thumbs + "</div>"
-        : '<p class="empty">No photos in this leg.</p>') +
+        : '<p class="empty">No photos in this site.</p>') +
       "</div>";
   }
 
@@ -368,11 +374,28 @@
       return;
     }
 
+    const images = leg.images || [];
+    const lastIndex = images.length - 1;
+    const prev =
+      photoIndex > 0
+        ? '<button class="viewer-nav" type="button" data-prev>Previous</button>'
+        : "";
+    const next =
+      photoIndex < lastIndex
+        ? '<button class="viewer-nav" type="button" data-next>Next</button>'
+        : "";
+
     document.title = (leg.title || title) + " — photo";
     app.innerHTML =
       '<div class="viewer">' +
       '<div class="viewer-bar">' +
-      '<button class="viewer-back" type="button" data-back>Back</button>' +
+      '<div class="viewer-actions">' +
+      '<button class="viewer-back" type="button" data-back>Back to ' +
+      escapeHtml(leg.title) +
+      "</button>" +
+      prev +
+      next +
+      "</div>" +
       '<p class="viewer-meta">' +
       escapeHtml(formatDateTime(image.datetime)) +
       "</p></div>" +
@@ -387,6 +410,18 @@
     back.addEventListener("click", function () {
       go("#/leg/" + legIndex);
     });
+    const prevButton = app.querySelector("[data-prev]");
+    if (prevButton) {
+      prevButton.addEventListener("click", function () {
+        go("#/leg/" + legIndex + "/photo/" + (photoIndex - 1));
+      });
+    }
+    const nextButton = app.querySelector("[data-next]");
+    if (nextButton) {
+      nextButton.addEventListener("click", function () {
+        go("#/leg/" + legIndex + "/photo/" + (photoIndex + 1));
+      });
+    }
   }
 
   function render() {
