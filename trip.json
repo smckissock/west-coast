@@ -4,7 +4,7 @@
     {
       "title": "Santa Monica",
       "state": "California",
-      "description": "We stayed in a hostel near Santa Monica Pier.",
+      "description": "We stayed in a hostel near Santa Monica Pier. We weren't prepared for how cool the palm trees that lined all the streets would be.",
       "startDate": "2026-07-24",
       "endDate": "2026-07-25",
       "images": [
@@ -356,7 +356,7 @@
     {
       "title": "Las Vegas",
       "state": "Nevada",
-      "description": "Pinball Museum was the highlight of Las Vegas for us.  Maybe 200 working pinball machines dating from the 50s.",
+      "description": "We aren't into the Las Vegas sins - except maybe neon - but the Pinball Hall of Fame as great. Maybe 200 working pinball machines dating from the 50s. Plus we went to cirque du soleil, and ate at a Las Vegas buffet, which I hear might be going away.",
       "startDate": "2026-07-28",
       "endDate": "2026-07-30",
       "images": [
@@ -920,6 +920,7 @@
     {
       "title": "Bryce Canyon",
       "state": "Utah",
+      "description": "Probably the most memorable hikes of the trip. Would of been better if we came in the Fall though.",
       "startDate": "2026-08-01",
       "endDate": "2026-08-02",
       "images": [
@@ -1021,8 +1022,72 @@
       ]
     },
     {
+      "title": "Death Valley",
+      "description": "Not much to see here, but we got a nice picture in front of the sign - 120F / 49C!",
+      "startDate": "2026-08-03",
+      "endDate": "2026-08-03",
+      "images": [
+        {
+          "filename": "IMG_3199.JPEG",
+          "datetime": "2026-08-03T11:25:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3200.JPEG",
+          "datetime": "2026-08-03T11:27:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3205.JPEG",
+          "datetime": "2026-08-03T11:37:36",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3219.JPEG",
+          "datetime": "2026-08-03T11:50:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3229.JPEG",
+          "datetime": "2026-08-03T12:04:18",
+          "hero": true
+        },
+        {
+          "filename": "IMG_3236.JPEG",
+          "datetime": "2026-08-03T12:40:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3239.JPEG",
+          "datetime": "2026-08-03T12:45:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3244.JPEG",
+          "datetime": "2026-08-03T12:58:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3252.JPEG",
+          "datetime": "2026-08-03T13:04:02",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3293.JPEG",
+          "datetime": "2026-08-03T13:16:38",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3344.JPEG",
+          "datetime": "2026-08-03T14:25:20",
+          "hero": false
+        }
+      ]
+    },
+    {
       "title": "Manzanar - Japanese Internment Camp",
       "state": "California",
+      "description": "The camp's buildings are not there anymore, but you can drive around the camp and see the foundations to get a sense of the scope of the place. Very good museum.",
       "startDate": "2026-08-03",
       "endDate": "2026-08-03",
       "images": [
@@ -1209,6 +1274,7 @@
     {
       "title": "Monterey",
       "state": "California",
+      "description": "Monterey Aquarium and Carmel. Also the famous \"17 drive\" which turned out to be the ocean views along Pebble Beach golf course. Oregon coast was better.",
       "startDate": "2026-08-05",
       "endDate": "2026-08-05",
       "images": [
@@ -1357,6 +1423,7 @@
     {
       "title": "San Francisco",
       "state": "California",
+      "description": "We stayed for three days in the \"Royal Pacific Motor Inn\" which is between Chinatown and Little Italy and around the corner from City Lights bookstore. Also easy to walk to Coit Tower and the Embarcadero.  We needed to drive and Uber to Golden Gate bridge and Little Japan. Also spent a day in Silicon Valley - Apple, Google and the Computer History Museum.",
       "startDate": "2026-08-05",
       "endDate": "2026-08-07",
       "images": [
@@ -1775,6 +1842,7 @@
     {
       "title": "Charles Shultz Museum",
       "state": "California",
+      "description": "Awesome museum for Peanuts fan in Santa Rosa, where Shultz did most of his work. Bottom floor is devoted to the comics, and upper floor to Shultz's life, including his actual studio.",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "images": [
@@ -1789,13 +1857,73 @@
           "hero": true
         },
         {
+          "filename": "IMG_3492.JPEG",
+          "datetime": "2026-08-08T10:32:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3493.JPEG",
+          "datetime": "2026-08-08T10:33:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3495.JPEG",
+          "datetime": "2026-08-08T10:36:20",
+          "hero": false
+        },
+        {
           "filename": "IMG_2970.JPEG",
           "datetime": "2026-08-08T10:37:14",
           "hero": false
         },
         {
+          "filename": "IMG_3496.JPEG",
+          "datetime": "2026-08-08T10:38:54",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3502.JPEG",
+          "datetime": "2026-08-08T11:01:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3503.JPEG",
+          "datetime": "2026-08-08T11:03:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3512.JPEG",
+          "datetime": "2026-08-08T11:07:39",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3519.JPEG",
+          "datetime": "2026-08-08T11:13:12",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3524.JPEG",
+          "datetime": "2026-08-08T11:16:29",
+          "hero": false
+        },
+        {
           "filename": "IMG_2971.JPEG",
           "datetime": "2026-08-08T11:18:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3528.JPEG",
+          "datetime": "2026-08-08T11:19:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3535.JPEG",
+          "datetime": "2026-08-08T11:25:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3546.JPEG",
+          "datetime": "2026-08-08T11:41:51",
           "hero": false
         },
         {
@@ -1812,12 +1940,23 @@
           "filename": "IMG_2974.JPEG",
           "datetime": "2026-08-08T13:02:06",
           "hero": false
+        },
+        {
+          "filename": "IMG_3575.JPEG",
+          "datetime": "2026-08-08T13:02:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_3577.JPEG",
+          "datetime": "2026-08-08T13:02:50",
+          "hero": false
         }
       ]
     },
     {
       "title": "Pacific Coast Highway / Redwoods",
       "state": "California",
+      "description": "Many options for hikes in different redwood groves, and you mostly have them to yourself. Not too hot in early August.",
       "startDate": "2026-08-08",
       "endDate": "2026-08-10",
       "images": [
@@ -2046,7 +2185,7 @@
     {
       "title": "Seattle",
       "state": "Washington",
-      "description": "We met Paul in Seattle and he showed us his building plus and the Amazon spheres.",
+      "description": "We met Paul in Seattle and he showed us his building plus and the Amazon spheres. Stayed at the Mediterranean Inn which was a short walk from Paul's apartment and around the corner from KEXP. They had bikes so we took a ride near the water.",
       "startDate": "2026-08-10",
       "endDate": "2026-08-12",
       "images": [
@@ -2365,6 +2504,7 @@
     {
       "title": "Will at College",
       "state": "Pennsylvania",
+      "description": "We got back and two days later Will started college.",
       "startDate": "2026-08-15",
       "endDate": "2026-08-16",
       "images": [
