@@ -14,6 +14,24 @@
     return "./photos/" + encodeURIComponent(filename);
   }
 
+  function thumbSrc(filename) {
+    return "./thumbs/" + encodeURIComponent(filename);
+  }
+
+  function thumbImg(filename, className, alt) {
+    return (
+      '<img class="' +
+      className +
+      '" src="' +
+      thumbSrc(filename) +
+      '" alt="' +
+      escapeHtml(alt || "") +
+      '" onerror="this.onerror=null;this.src=\'' +
+      photoSrc(filename) +
+      '\'">'
+    );
+  }
+
   function formatDateTime(iso) {
     const date = new Date(iso);
     if (Number.isNaN(date.getTime())) {
@@ -251,11 +269,9 @@
       .map(function (leg, index) {
         const hero = heroOf(leg);
         const image = hero
-          ? '<div class="leg-card-image-wrap"><img class="leg-card-image" src="' +
-            photoSrc(hero.filename) +
-            '" alt="' +
-            escapeHtml(leg.title) +
-            '"></div>'
+          ? '<div class="leg-card-image-wrap">' +
+            thumbImg(hero.filename, "leg-card-image", leg.title) +
+            "</div>"
           : '<div class="leg-card-image-wrap"></div>';
         const range = dateRangeLabel(leg);
         const dates = range
@@ -317,9 +333,9 @@
           "/photo/" +
           photoIndex +
           '">' +
-          '<div class="thumb-image-wrap"><img class="thumb-image" src="' +
-          photoSrc(image.filename) +
-          '" alt=""></div>' +
+          '<div class="thumb-image-wrap">' +
+          thumbImg(image.filename, "thumb-image", "") +
+          "</div>" +
           '<p class="thumb-meta">' +
           escapeHtml(formatDateTime(image.datetime)) +
           "</p></a>"

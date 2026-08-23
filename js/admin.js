@@ -18,6 +18,7 @@
   const legTitleInput = document.getElementById("leg-title");
   const saveButton = document.getElementById("save-json");
   const saveStatus = document.getElementById("save-status");
+  const thumbBanner = document.getElementById("thumb-banner");
 
   let nextId = 1;
   let activeLegId = null;
@@ -893,6 +894,37 @@
     render();
   });
 
+  function refreshThumbStatus() {
+    if (!thumbBanner) {
+      return;
+    }
+    fetch("./thumb-status")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("no thumb status");
+        }
+        return response.json();
+      })
+      .then(function (data) {
+        const missing = data && Array.isArray(data.missing) ? data.missing : [];
+        if (!missing.length) {
+          thumbBanner.hidden = true;
+          thumbBanner.textContent = "";
+          return;
+        }
+        thumbBanner.hidden = false;
+        thumbBanner.innerHTML =
+          missing.length +
+          (missing.length === 1
+            ? " photo has no thumbnail. "
+            : " photos have no thumbnail. ") +
+          "In this folder run <code>uv run python make_thumbs.py</code>, then refresh.";
+      })
+      .catch(function () {
+        thumbBanner.hidden = true;
+      });
+  }
+
   fetch("./trip.json")
     .then(function (response) {
       if (!response.ok) {
@@ -903,8 +935,10 @@
     .then(function (data) {
       loadTrip(data);
       render();
+      refreshThumbStatus();
     })
     .catch(function () {
       render();
+      refreshThumbStatus();
     });
 })();

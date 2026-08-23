@@ -110,6 +110,19 @@ button:hover {
   color: #f0b4a6;
 }
 
+.thumb-banner {
+  margin: 0;
+  padding: 0.7rem 1.25rem;
+  background: #f3e2a8;
+  color: #5a4308;
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+.thumb-banner code {
+  font-size: 0.88em;
+}
+
 .inbox-section {
   margin-bottom: 1.5rem;
 }

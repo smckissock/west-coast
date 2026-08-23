@@ -1,0 +1,8 @@
+[project]
+name = "west-coast"
+version = "0.1.0"
+description = "Local tools for the West Coast trip album"
+requires-python = ">=3.10"
+dependencies = [
+    "pillow>=10.0.0",
+]
