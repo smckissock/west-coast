@@ -1,0 +1,440 @@
+{
+  "title": "West Coast Trip",
+  "legs": [
+    {
+      "title": "Los Angeles",
+      "images": [
+        {
+          "filename": "IMG_1961.JPEG",
+          "datetime": "2026-07-25T12:33:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1962.JPEG",
+          "datetime": "2026-07-25T12:56:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1971.JPEG",
+          "datetime": "2026-07-26T07:50:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1972.JPEG",
+          "datetime": "2026-07-26T08:08:26",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1975.JPEG",
+          "datetime": "2026-07-26T08:11:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1976.JPEG",
+          "datetime": "2026-07-26T08:13:16",
+          "hero": true
+        },
+        {
+          "filename": "IMG_1979.JPEG",
+          "datetime": "2026-07-26T08:20:32",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1981.JPEG",
+          "datetime": "2026-07-26T08:21:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1983.JPEG",
+          "datetime": "2026-07-26T08:22:42",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1984.JPEG",
+          "datetime": "2026-07-26T08:23:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1985.JPEG",
+          "datetime": "2026-07-26T08:23:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1986.JPEG",
+          "datetime": "2026-07-26T08:24:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1991.JPEG",
+          "datetime": "2026-07-26T08:29:23",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1993.JPEG",
+          "datetime": "2026-07-26T08:29:47",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1994.JPEG",
+          "datetime": "2026-07-26T08:29:52",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1995.JPEG",
+          "datetime": "2026-07-26T08:29:55",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1997.JPEG",
+          "datetime": "2026-07-26T08:29:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1998.JPEG",
+          "datetime": "2026-07-26T08:30:36",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1999.JPEG",
+          "datetime": "2026-07-26T08:30:41",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2002.JPEG",
+          "datetime": "2026-07-26T11:17:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2003.JPEG",
+          "datetime": "2026-07-26T16:24:40",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2004.JPEG",
+          "datetime": "2026-07-26T16:25:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2007.JPEG",
+          "datetime": "2026-07-26T18:56:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2008.JPEG",
+          "datetime": "2026-07-26T18:58:36",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2010.JPEG",
+          "datetime": "2026-07-27T10:53:24",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2011.JPEG",
+          "datetime": "2026-07-27T10:55:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2013.JPEG",
+          "datetime": "2026-07-27T11:51:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2014.JPEG",
+          "datetime": "2026-07-27T11:52:48",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2017.JPEG",
+          "datetime": "2026-07-27T15:56:54",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2018.JPEG",
+          "datetime": "2026-07-27T15:56:57",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2019.JPEG",
+          "datetime": "2026-07-27T16:08:41",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Santa Monica",
+      "images": [
+        {
+          "filename": "IMG_1908.JPEG",
+          "datetime": "2026-07-24T11:06:36",
+          "hero": true
+        },
+        {
+          "filename": "IMG_1906.JPEG",
+          "datetime": "2026-07-24T11:09:51",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1915.JPEG",
+          "datetime": "2026-07-25T06:17:49",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1920.JPEG",
+          "datetime": "2026-07-25T06:19:53",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1930.JPEG",
+          "datetime": "2026-07-25T06:20:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1931.JPEG",
+          "datetime": "2026-07-25T06:27:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1935.JPEG",
+          "datetime": "2026-07-25T06:27:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1951.JPEG",
+          "datetime": "2026-07-25T08:22:07",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1953.JPEG",
+          "datetime": "2026-07-25T08:27:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1955.JPEG",
+          "datetime": "2026-07-25T08:38:17",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1956.JPEG",
+          "datetime": "2026-07-25T08:51:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_1957.JPEG",
+          "datetime": "2026-07-25T08:55:56",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Pasadena",
+      "images": [
+        {
+          "filename": "IMG_2022.JPEG",
+          "datetime": "2026-07-28T10:35:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2023.JPEG",
+          "datetime": "2026-07-28T10:35:18",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2024.JPEG",
+          "datetime": "2026-07-28T10:35:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2025.JPEG",
+          "datetime": "2026-07-28T10:38:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2027.JPEG",
+          "datetime": "2026-07-28T10:39:24",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2029.JPEG",
+          "datetime": "2026-07-28T10:42:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2033.JPEG",
+          "datetime": "2026-07-28T10:46:43",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2035.JPEG",
+          "datetime": "2026-07-28T10:48:08",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2041.JPEG",
+          "datetime": "2026-07-28T10:51:06",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2046.JPEG",
+          "datetime": "2026-07-28T10:56:13",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2048.JPEG",
+          "datetime": "2026-07-28T10:56:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2049.JPEG",
+          "datetime": "2026-07-28T10:56:44",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2093.JPEG",
+          "datetime": "2026-07-28T11:22:46",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2119.JPEG",
+          "datetime": "2026-07-28T11:38:11",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2128.JPEG",
+          "datetime": "2026-07-28T11:52:24",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2132.JPEG",
+          "datetime": "2026-07-28T11:53:21",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2134.JPEG",
+          "datetime": "2026-07-28T11:53:25",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2135.JPEG",
+          "datetime": "2026-07-28T11:54:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2136.JPEG",
+          "datetime": "2026-07-28T11:54:15",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2137.JPEG",
+          "datetime": "2026-07-28T11:54:31",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2139.JPEG",
+          "datetime": "2026-07-28T11:55:19",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2147.JPEG",
+          "datetime": "2026-07-28T12:06:49",
+          "hero": false
+        }
+      ]
+    },
+    {
+      "title": "Las Vegas",
+      "images": [
+        {
+          "filename": "IMG_2152.JPEG",
+          "datetime": "2026-07-28T20:16:26",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2154.JPEG",
+          "datetime": "2026-07-29T07:51:58",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2156.JPEG",
+          "datetime": "2026-07-29T15:24:50",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2158.JPEG",
+          "datetime": "2026-07-29T15:58:19",
+          "hero": true
+        },
+        {
+          "filename": "IMG_2162.JPEG",
+          "datetime": "2026-07-29T16:22:05",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2163.JPEG",
+          "datetime": "2026-07-29T17:25:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2164.JPEG",
+          "datetime": "2026-07-29T17:26:03",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2166.JPEG",
+          "datetime": "2026-07-29T17:26:14",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2167.JPEG",
+          "datetime": "2026-07-29T17:26:45",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2170.JPEG",
+          "datetime": "2026-07-29T17:26:59",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2182.JPEG",
+          "datetime": "2026-07-29T17:31:38",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2186.JPEG",
+          "datetime": "2026-07-29T17:41:04",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2192.JPEG",
+          "datetime": "2026-07-29T17:47:29",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2193.JPEG",
+          "datetime": "2026-07-29T17:55:20",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2197.JPEG",
+          "datetime": "2026-07-30T05:15:30",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2216.JPEG",
+          "datetime": "2026-07-30T07:46:28",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2218.JPEG",
+          "datetime": "2026-07-30T07:49:00",
+          "hero": false
+        },
+        {
+          "filename": "IMG_2219.JPEG",
+          "datetime": "2026-07-30T07:51:23",
+          "hero": false
+        }
+      ]
+    }
+  ]
+}

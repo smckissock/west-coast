@@ -1,0 +1,285 @@
+:root {
+  --ink: #1c1914;
+  --muted: #6b6458;
+  --paper: #eef2ef;
+  --card: #ffffff;
+  --line: #c9d0ca;
+  --accent: #245c45;
+  --accent-soft: #d7ebe1;
+  --danger: #8b3d2a;
+  --shadow: 0 8px 24px rgba(28, 25, 20, 0.06);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "DM Sans", "Segoe UI", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.25rem 1rem;
+  background: #1c1914;
+  color: #f4efe4;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+.top-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button,
+input[type="text"] {
+  font: inherit;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button.ghost,
+button.mini {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid #d8c4bd;
+  border-radius: 999px;
+}
+
+.top button,
+.top .view-album {
+  background: #d7ebe1;
+  color: #163526;
+}
+
+.top .view-album {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.top button:hover,
+.top .view-album:hover,
+button:hover {
+  filter: brightness(1.05);
+}
+
+.save-status {
+  margin: 0;
+  color: #b7cfc3;
+  font-size: 0.85rem;
+}
+
+.save-status.is-ok {
+  color: #9ee0bc;
+}
+
+.save-status.is-err {
+  color: #f0b4a6;
+}
+
+.inbox-section {
+  margin-bottom: 1.5rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem 0 4rem;
+}
+
+.leg-panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1rem 1.1rem;
+}
+
+.leg-list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.leg-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  background: #f4f7f5;
+  color: var(--ink);
+  text-align: left;
+}
+
+.leg-item.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.leg-item .count {
+  opacity: 0.75;
+  font-size: 0.8rem;
+}
+
+.new-leg {
+  margin-top: 0.5rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+.new-leg label,
+h2 {
+  display: block;
+  margin: 0 0 0.45rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#leg-title,
+#edit-title {
+  flex: 1 1 12rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  background: var(--card);
+}
+
+#edit-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.title-label {
+  width: 100%;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hint,
+.empty {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.photo-card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.photo-card.is-selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.photo-card.is-hero {
+  border-color: #b8860b;
+}
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: #dfe6e1;
+}
+
+.photo-meta {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.6rem 0.7rem 0.75rem;
+  font-size: 0.78rem;
+}
+
+.photo-meta strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  justify-self: start;
+  background: #f3e2a8;
+  color: #5a4308;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  font-weight: 700;
+}
+
+.leg-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+@media (min-width: 800px) {
+  .top {
+    padding: 1.5rem 2rem;
+  }
+
+  .layout {
+    grid-template-columns: 16.5rem 1fr;
+    align-items: start;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
