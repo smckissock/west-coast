@@ -10,7 +10,7 @@ The album and the admin are separate. The public site has no admin menu. Open `a
 
 Visitors open `index.html`. It reads `trip.json`. Home cards and site grids use smaller images in `thumbs/`. Fullscreen photos still come from `photos/`.
 
-- Home: trip date range under the title, a western US map with straight lines between stops, then one card per site (title, state, date range, hero photo)
+- Home: trip date range under the title, a calendar of the weeks that have photos above a western US map with straight lines between stops, then one card per site (title, state, date range, hero photo). Hovering a calendar day, a map stop, or a card highlights the matching days, stops, and cards together, and scrolls the map and the card grid so the matching stop and card are in view. Clicking a calendar day opens the first site of that day. The calendar and map are hidden on narrow screens.
 - Site: title with state to the right, date range, optional description, then thumbnails with date/time from `trip.json`
 - Photo: fullscreen view with a back button
 

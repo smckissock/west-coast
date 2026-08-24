@@ -190,7 +190,7 @@
         {
           "filename": "IMG_2007.JPEG",
           "datetime": "2026-07-26T18:56:11",
-          "hero": false
+          "hero": true
         },
         {
           "filename": "IMG_2008.JPEG",
@@ -225,7 +225,7 @@
         {
           "filename": "IMG_2018.JPEG",
           "datetime": "2026-07-27T15:56:57",
-          "hero": true
+          "hero": false
         },
         {
           "filename": "IMG_2019.JPEG",
@@ -1844,7 +1844,7 @@
     {
       "title": "Charles Shultz Museum",
       "state": "California",
-      "description": "Awesome museum for Peanuts fan in Santa Rosa, where Shultz did most of his work. Bottom floor is devoted to the comics, and upper floor to Shultz's life, including his actual studio. But left kind of perplexed and bummed, as Shultz would have intended.",
+      "description": "Awesome museum for Peanuts fans in Santa Rosa, where Shultz did most of his work. Bottom floor is devoted to the comics, and upper floor to Shultz's life, including his actual studio. Worthy of Shultz; everything a Peanuts fan could want.",
       "startDate": "2026-08-08",
       "endDate": "2026-08-08",
       "images": [
@@ -1960,7 +1960,7 @@
       "state": "California",
       "description": "Many options for hikes in different redwood groves, and you mostly have them to yourself. Not too hot in early August. The stops and hikes on the Oregon coast are unbelievable, and you have them all to yourself.  Could easily spend a week on those.",
       "startDate": "2026-08-08",
-      "endDate": "2026-08-10",
+      "endDate": "2026-08-08",
       "images": [
         {
           "filename": "IMG_2975.JPEG",
@@ -2036,12 +2036,16 @@
           "filename": "IMG_2994.JPEG",
           "datetime": "2026-08-08T20:41:31",
           "hero": false
-        },
-        {
-          "filename": "IMG_2995.JPEG",
-          "datetime": "2026-08-09T08:27:02",
-          "hero": false
-        },
+        }
+      ]
+    },
+    {
+      "title": "Eureka & Tillamook",
+      "state": "Oregon",
+      "description": "The Oregon coast was a surprise - 101 goes along long stretches of publicly owned shore, not much \"beach\" but lots of cliffs leading down to the water. We could have spent a week in something called \"Samuel H. Boardman State Scenic Corridor\" - lots of hikes in the redwoods and along the shore. We stayed in Eureka (which became rich around 1900 but is now pretty rough) and went to the cheese factory in Tillamook.",
+      "startDate": "2026-08-09",
+      "endDate": "2026-08-10",
+      "images": [
         {
           "filename": "IMG_2996.JPEG",
           "datetime": "2026-08-09T08:27:18",
@@ -2135,7 +2139,7 @@
         {
           "filename": "IMG_3023.JPEG",
           "datetime": "2026-08-09T19:18:08",
-          "hero": false
+          "hero": true
         },
         {
           "filename": "IMG_3024.JPEG",
@@ -2187,7 +2191,7 @@
     {
       "title": "Seattle",
       "state": "Washington",
-      "description": "We met Paul in Seattle and he showed us his building plus and the Amazon spheres. Stayed at the Mediterranean Inn which was a short walk from Paul's apartment and around the corner from KEXP. They had bikes so we took a ride near the water.",
+      "description": "We met Paul in Seattle and he showed us his building plus and the Amazon spheres. Stayed at the Mediterranean Inn which was a short walk from Paul's apartment and around the corner from KEXP and the Mecca restaurant - good place. Hotel had bikes so we took a ride near the water.",
       "startDate": "2026-08-10",
       "endDate": "2026-08-12",
       "images": [

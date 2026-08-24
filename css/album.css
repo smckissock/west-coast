@@ -8,9 +8,9 @@
   --line: #ddd6c7;
   --line-strong: #c6bda9;
 
-  --accent: #1f5f47;
-  --accent-deep: #113b2c;
-  --accent-soft: #dce9e1;
+  --accent: #7b4f2d;
+  --accent-deep: #4a2e19;
+  --accent-soft: #ddd6c7;
 
   --sea: #d5e5ee;
   --land: #e8e3d2;
@@ -33,6 +33,8 @@
 
   --grid-gap: 0.75rem;
   --ease: cubic-bezier(0.22, 0.8, 0.3, 1);
+  /* Even curve for dim/undim so skimming the calendar does not snap. */
+  --ease-dim: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -153,10 +155,83 @@ body {
   align-items: stretch;
 }
 
+.home-aside {
+  display: none;
+}
+
+/* ---------- calendar ---------- */
+
+.trip-calendar {
+  margin: 0;
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+.cal-caption {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 2rem);
+  justify-content: center;
+  gap: 4px;
+}
+
+.cal-weekday {
+  padding-bottom: 0.2rem;
+  color: var(--faint);
+  font-size: var(--step--1);
+  font-weight: 700;
+  text-align: center;
+}
+
+.cal-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: var(--line);
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  transition: background 160ms var(--ease), color 160ms var(--ease),
+    opacity 420ms var(--ease-dim), transform 160ms var(--ease);
+}
+
+.cal-day[data-day] {
+  cursor: pointer;
+}
+
+.cal-day.is-month-start {
+  font-size: 0.62rem;
+  letter-spacing: -0.02em;
+}
+
+.cal-day.is-empty {
+  background: transparent;
+  color: var(--faint);
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.cal-day.is-hot {
+  background: var(--ink);
+  color: var(--paper);
+  transform: scale(1.09);
+}
+
+.trip-calendar.is-dimming .cal-day:not(.is-hot) {
+  opacity: 0.5;
+}
+
 /* ---------- route map ---------- */
 
 .route-map {
-  display: none;
   margin: 0;
   flex: 0 0 auto;
 }
@@ -186,7 +261,7 @@ body {
 }
 
 .route-grad-start {
-  stop-color: #56a081;
+  stop-color: #a98352;
 }
 
 .route-grad-end {
@@ -277,11 +352,11 @@ body {
 }
 
 .route-map.is-dimming .route-stop:not(.is-hot) {
-  opacity: 0.3;
+  opacity: 0.5;
 }
 
 .route-stop {
-  transition: opacity 160ms var(--ease);
+  transition: opacity 420ms var(--ease-dim);
 }
 
 /* ---------- home cards ---------- */
@@ -307,12 +382,9 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  box-shadow: var(--shadow-1);
-  outline: 1px solid var(--line);
-  outline-offset: -1px;
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-1);
   transition: transform 220ms var(--ease), box-shadow 220ms var(--ease),
-    outline-color 160ms var(--ease), opacity 200ms var(--ease),
-    filter 200ms var(--ease);
+    opacity 420ms var(--ease-dim), filter 420ms var(--ease-dim);
 }
 
 @container (min-width: 300px) {
@@ -341,21 +413,18 @@ body {
 .leg-card.is-hot {
   z-index: 3;
   transform: translateY(-4px);
-  box-shadow: var(--shadow-2);
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  box-shadow: 0 0 0 2px var(--accent), var(--shadow-2);
 }
 
 .leg-card.is-hot {
   transform: translateY(-6px) scale(1.04);
-  outline: 3px solid var(--accent);
-  outline-offset: -3px;
-  box-shadow: 0 0 0 5px var(--accent-soft), var(--shadow-2);
+  box-shadow: 0 0 0 3px var(--accent), 0 0 0 6px var(--accent-soft),
+    var(--shadow-2);
 }
 
 .leg-grid.is-dimming .leg-card:not(.is-hot) {
-  opacity: 0.28;
-  filter: saturate(0.35);
+  opacity: 0.55;
+  filter: saturate(0.7);
 }
 
 .leg-card:hover .leg-card-image,
@@ -516,19 +585,14 @@ body {
   overflow: hidden;
   text-decoration: none;
   color: inherit;
-  box-shadow: var(--shadow-1);
-  outline: 1px solid var(--line);
-  outline-offset: -1px;
-  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease),
-    outline-color 160ms var(--ease);
+  box-shadow: 0 0 0 1px var(--line), var(--shadow-1);
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
 }
 
 .thumb:hover,
 .thumb:focus-visible {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-2);
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
+  box-shadow: 0 0 0 2px var(--accent), var(--shadow-2);
 }
 
 .thumb-image-wrap {
@@ -796,16 +860,67 @@ body {
 @media (min-width: 860px) {
   .home-body {
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 1.5rem;
   }
 
-  .route-map {
-    display: block;
+  /* Home becomes two independently scrolling panes so the calendar stays put
+     while the tiles move. */
+  .page-home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 1.25rem;
+  }
+
+  .page-home .masthead {
+    flex: 0 0 auto;
+  }
+
+  .page-home .home-body {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .home-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     flex: 0 0 21.5rem;
     width: 21.5rem;
-    position: sticky;
-    top: 1.25rem;
+    min-height: 0;
+  }
+
+  .page-home .trip-calendar {
+    flex: 0 0 auto;
+  }
+
+  /* The map is far taller than any window, so it scrolls inside a fixed frame
+     rather than pushing the calendar off screen. */
+  .page-home .route-map {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background: var(--sea);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-lg);
+    box-shadow: var(--shadow-1);
+  }
+
+  .page-home .route-map svg {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .page-home .leg-grid {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    align-content: flex-start;
+    /* Room for the lifted card's ring so it is not clipped at the pane edge. */
+    padding: 1.15rem 0.85rem 0.75rem;
   }
 
   .day-heading {

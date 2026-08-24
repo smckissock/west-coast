@@ -251,7 +251,12 @@
       return;
     }
     const incoming = Array.from(fileList).filter(isImageFile);
+    if (!incoming.length) {
+      return;
+    }
     let firstNewId = null;
+    let addedCount = 0;
+    let movedCount = 0;
     for (const file of incoming) {
       const filename = filenameOf(file);
       const existing = photos.find(function (photo) {
@@ -268,6 +273,17 @@
         if (!existing.datetime) {
           existing.datetime = datetime;
         }
+        if (existing.legId !== leg.id) {
+          if (existing.legId != null) {
+            movedCount += 1;
+          } else {
+            addedCount += 1;
+          }
+          movePhotoToLeg(existing, leg.id);
+          if (firstNewId == null) {
+            firstNewId = existing.id;
+          }
+        }
       } else {
         const photo = {
           id: nextId,
@@ -279,6 +295,7 @@
         };
         nextId += 1;
         photos.push(photo);
+        addedCount += 1;
         if (firstNewId == null) {
           firstNewId = photo.id;
         }
@@ -294,6 +311,26 @@
       return a.datetime < b.datetime ? -1 : 1;
     });
     render();
+    const changed = addedCount + movedCount;
+    setStatus(addFilesStatus(addedCount, movedCount, leg), changed ? "ok" : "err");
+  }
+
+  function countLabel(count, noun) {
+    return count + " " + noun + (count === 1 ? "" : "s");
+  }
+
+  function addFilesStatus(addedCount, movedCount, leg) {
+    if (!addedCount && !movedCount) {
+      return "Already on " + leg.title + " — nothing to add";
+    }
+    const parts = [];
+    if (addedCount) {
+      parts.push(countLabel(addedCount, "photo") + " added");
+    }
+    if (movedCount) {
+      parts.push(countLabel(movedCount, "photo") + " moved from another site");
+    }
+    return parts.join(", ") + " — " + leg.title;
   }
 
   function formatDateTime(iso) {
@@ -531,6 +568,18 @@
     });
   }
 
+  function movePhotoToLeg(photo, legId) {
+    const oldLeg = legs.find(function (item) {
+      return item.id === photo.legId;
+    });
+    const wasHero = !!oldLeg && oldLeg.heroId === photo.id;
+    photo.legId = legId;
+    if (wasHero) {
+      const nextHero = photosInLeg(oldLeg.id)[0];
+      oldLeg.heroId = nextHero ? nextHero.id : null;
+    }
+  }
+
   function activeLeg() {
     return legs.find(function (item) {
       return item.id === activeLegId;
@@ -706,7 +755,7 @@
         return item.id === id;
       });
       if (photo) {
-        photo.legId = legId;
+        movePhotoToLeg(photo, legId);
         if (leg.heroId == null) {
           leg.heroId = photo.id;
         }
@@ -907,15 +956,8 @@
         return item.id === id;
       });
       if (photo) {
-        const oldLeg = legs.find(function (item) {
-          return item.id === photo.legId;
-        });
-        photo.legId = null;
+        movePhotoToLeg(photo, null);
         selected.delete(id);
-        if (oldLeg && oldLeg.heroId === id) {
-          const nextHero = photosInLeg(oldLeg.id)[0];
-          oldLeg.heroId = nextHero ? nextHero.id : null;
-        }
         render();
       }
       return;

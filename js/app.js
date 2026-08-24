@@ -279,6 +279,7 @@
     "San Francisco": [37.77, -122.42],
     "Charles Shultz Museum": [38.44, -122.71],
     "Pacific Coast Highway / Redwoods": [41.21, -124.0],
+    "Eureka & Tillamook": [45.46, -123.85],
     Seattle: [47.61, -122.33],
   };
 
@@ -299,6 +300,7 @@
     "San Francisco": "San Francisco",
     "Charles Shultz Museum": "Schulz Museum",
     "Pacific Coast Highway / Redwoods": "Pacific Coast Highway / Redwoods",
+    "Eureka & Tillamook": "Eureka & Tillamook",
     Seattle: "Seattle",
   };
 
@@ -342,6 +344,7 @@
     "San Francisco": 10,
     "Charles Shultz Museum": 8,
     "Pacific Coast Highway / Redwoods": 10,
+    "Eureka & Tillamook": 10,
     Seattle: 12,
   };
 
@@ -532,7 +535,7 @@
       '"><stop class="route-grad-start" offset="0"></stop>' +
       '<stop class="route-grad-end" offset="1"></stop></linearGradient></defs>';
     const dots = stops
-      .map(function (stop, order) {
+      .map(function (stop) {
         const offset = stop.anchor === "end" ? -LABEL_OFFSET : LABEL_OFFSET;
         const labelX = (stop.x + offset).toFixed(1);
         const labelY = (stop.y + 6).toFixed(1);
@@ -564,7 +567,7 @@
           '" y="' +
           (stop.y + 4.6).toFixed(1) +
           '">' +
-          (order + 1) +
+          (stop.index + 1) +
           "</text>" +
           '<text class="route-label" x="' +
           labelX +
@@ -597,11 +600,175 @@
     );
   }
 
+  /* ---------- calendar ---------- */
+
+  const WEEKDAY_INITIALS = ["S", "M", "T", "W", "T", "F", "S"];
+
+  function toDate(ymd) {
+    const parts = parseYmd(ymd);
+    return parts
+      ? new Date(parts.year, parts.month - 1, parts.day, 12, 0, 0)
+      : null;
+  }
+
+  function toYmd(date) {
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return date.getFullYear() + "-" + month + "-" + day;
+  }
+
+  function legDayKeys(leg) {
+    const keys = [];
+    (leg.images || []).forEach(function (image) {
+      const key = datePart(image.datetime);
+      if (key && keys.indexOf(key) === -1) {
+        keys.push(key);
+      }
+    });
+    if (keys.length) {
+      return keys.sort();
+    }
+    const dates = datesOf(leg);
+    const cursor = dates && toDate(dates.startDate);
+    const end = dates && toDate(dates.endDate);
+    while (cursor && end && cursor <= end) {
+      keys.push(toYmd(cursor));
+      cursor.setDate(cursor.getDate() + 1);
+    }
+    return keys;
+  }
+
+  function buildDayIndex(legs) {
+    const legDays = [];
+    const dayLegs = {};
+    legs.forEach(function (leg, index) {
+      const keys = legDayKeys(leg);
+      legDays[index] = keys;
+      keys.forEach(function (key) {
+        if (!dayLegs[key]) {
+          dayLegs[key] = [];
+        }
+        dayLegs[key].push(index);
+      });
+    });
+    return { legDays: legDays, dayLegs: dayLegs };
+  }
+
+  function photoWeeks(dayLegs) {
+    const days = Object.keys(dayLegs).sort();
+    const cursor = days.length ? toDate(days[0]) : null;
+    const last = days.length ? toDate(days[days.length - 1]) : null;
+    if (!cursor || !last) {
+      return [];
+    }
+    cursor.setDate(cursor.getDate() - cursor.getDay());
+    last.setDate(last.getDate() + (6 - last.getDay()));
+    const weeks = [];
+    while (cursor <= last) {
+      const week = [];
+      for (let i = 0; i < 7; i += 1) {
+        week.push(toYmd(cursor));
+        cursor.setDate(cursor.getDate() + 1);
+      }
+      const hasPhotos = week.some(function (key) {
+        return !!dayLegs[key];
+      });
+      if (hasPhotos) {
+        weeks.push(week);
+      }
+    }
+    return weeks;
+  }
+
+  function calendarCaption(days) {
+    const first = parseYmd(days[0]);
+    const last = parseYmd(days[days.length - 1]);
+    if (!first || !last) {
+      return "";
+    }
+    const firstMonth = MONTHS[first.month - 1];
+    const lastMonth = MONTHS[last.month - 1];
+    if (first.year !== last.year) {
+      return (
+        firstMonth + " " + first.year + " \u2013 " + lastMonth + " " + last.year
+      );
+    }
+    if (first.month === last.month) {
+      return firstMonth + " " + first.year;
+    }
+    return firstMonth + " \u2013 " + lastMonth + " " + last.year;
+  }
+
+  function dayCellHtml(key, legs, dayLegs) {
+    const parts = parseYmd(key);
+    if (!parts) {
+      return '<span class="cal-day is-empty"></span>';
+    }
+    const monthStart = parts.day === 1;
+    const label = monthStart
+      ? MONTHS[parts.month - 1].slice(0, 3) + " 1"
+      : String(parts.day);
+    const classes = "cal-day" + (monthStart ? " is-month-start" : "");
+    const indices = dayLegs[key];
+    if (!indices) {
+      return (
+        '<span class="' + classes + ' is-empty">' + escapeHtml(label) + "</span>"
+      );
+    }
+    const names = indices
+      .map(function (index) {
+        return legs[index].title;
+      })
+      .join(", ");
+    return (
+      '<span class="' +
+      classes +
+      '" data-day="' +
+      key +
+      '" title="' +
+      escapeHtml(formatDay(parts, false) + " \u00b7 " + names) +
+      '">' +
+      escapeHtml(label) +
+      "</span>"
+    );
+  }
+
+  function calendarHtml(legs, index) {
+    const weeks = photoWeeks(index.dayLegs);
+    if (!weeks.length) {
+      return "";
+    }
+    const days = Object.keys(index.dayLegs).sort();
+    const header = WEEKDAY_INITIALS.map(function (letter) {
+      return '<span class="cal-weekday">' + letter + "</span>";
+    }).join("");
+    const cells = weeks
+      .map(function (week) {
+        return week
+          .map(function (key) {
+            return dayCellHtml(key, legs, index.dayLegs);
+          })
+          .join("");
+      })
+      .join("");
+    return (
+      '<figure class="trip-calendar" aria-hidden="true">' +
+      '<figcaption class="cal-caption micro">' +
+      escapeHtml(calendarCaption(days)) +
+      "</figcaption>" +
+      '<div class="cal-grid">' +
+      header +
+      cells +
+      "</div></figure>"
+    );
+  }
+
   /* ---------- home ---------- */
 
   let routeAnimated = false;
   let teardown = null;
   let keyHandler = null;
+  let homeIndex = { legDays: [], dayLegs: {} };
 
   function renderHome() {
     const title = trip.title || "West Coast Trip";
@@ -655,11 +822,16 @@
       })
       .join("");
 
+    homeIndex = buildDayIndex(legs);
+
     app.innerHTML =
-      '<div class="page">' +
+      '<div class="page page-home">' +
       masthead +
       '<div class="home-body">' +
+      '<div class="home-aside">' +
+      calendarHtml(legs, homeIndex) +
       routeMapHtml(legs) +
+      "</div>" +
       '<div class="leg-grid">' +
       cards +
       "</div></div></div>";
@@ -689,24 +861,41 @@
     }
     const map = home.querySelector(".route-map");
     const grid = home.querySelector(".leg-grid");
+    const calendar = home.querySelector(".trip-calendar");
     const nearby = new Set();
     let hovered = null;
     let hoveredSource = null;
     let pinned = null;
     let pinnedSource = null;
+    let revealTimer = null;
 
-    function nodesFor(leg) {
-      return home.querySelectorAll('[data-leg="' + leg + '"]');
+    function activeFor(target) {
+      const legs = new Set();
+      const days = new Set();
+      if (target && target.type === "day") {
+        days.add(target.key);
+        (homeIndex.dayLegs[target.key] || []).forEach(function (index) {
+          legs.add(String(index));
+        });
+      } else if (target) {
+        legs.add(target.key);
+        (homeIndex.legDays[Number(target.key)] || []).forEach(function (key) {
+          days.add(key);
+        });
+      }
+      return { legs: legs, days: days };
     }
 
     function sourceOf(el) {
+      if (calendar && calendar.contains(el)) {
+        return "calendar";
+      }
       return map && map.contains(el) ? "map" : "grid";
     }
 
     function paint() {
-      const fromHover = hovered !== null;
-      const active = fromHover ? hovered : pinned;
-      const source = fromHover ? hoveredSource : pinnedSource;
+      const target = hovered || pinned;
+      const source = hovered ? hoveredSource : pinnedSource;
       home.querySelectorAll(".is-hot").forEach(function (node) {
         node.classList.remove("is-hot");
       });
@@ -721,29 +910,36 @@
           }
         });
       }
-      if (active === null) {
-        if (map) {
-          map.classList.remove("is-dimming");
-        }
-        if (grid) {
-          grid.classList.remove("is-dimming");
-        }
+      if (!target) {
+        [map, grid, calendar].forEach(function (node) {
+          if (node) {
+            node.classList.remove("is-dimming");
+          }
+        });
         return;
       }
-      nodesFor(active).forEach(function (node) {
-        node.classList.add("is-hot");
+      const active = activeFor(target);
+      active.legs.forEach(function (leg) {
+        home.querySelectorAll('[data-leg="' + leg + '"]').forEach(function (node) {
+          node.classList.add("is-hot");
+        });
       });
+      if (calendar) {
+        active.days.forEach(function (day) {
+          const cell = calendar.querySelector('[data-day="' + day + '"]');
+          if (cell) {
+            cell.classList.add("is-hot");
+          }
+        });
+        calendar.classList.toggle("is-dimming", active.days.size > 0);
+      }
       if (map) {
-        map.classList.toggle(
-          "is-dimming",
-          !!map.querySelector('[data-leg="' + active + '"]')
-        );
+        map.classList.toggle("is-dimming", !!map.querySelector(".route-stop.is-hot"));
       }
       if (grid) {
         grid.classList.toggle(
           "is-dimming",
-          source === "map" &&
-            !!grid.querySelector('.leg-card[data-leg="' + active + '"]')
+          source !== "grid" && !!grid.querySelector(".leg-card.is-hot")
         );
       }
     }
@@ -755,24 +951,62 @@
       }
     }
 
+    function revealStop(leg) {
+      const stop = map && map.querySelector('.route-stop[data-leg="' + leg + '"]');
+      if (stop) {
+        stop.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
+
+    /* Skimming a pane crosses many targets, so wait for the pointer to settle
+       before scrolling. The pane under the pointer is left where it is. */
+    function scheduleReveal(target, source) {
+      window.clearTimeout(revealTimer);
+      revealTimer = window.setTimeout(function () {
+        const leg = firstLegOf(target);
+        if (leg === null) {
+          return;
+        }
+        if (source !== "grid") {
+          revealCard(leg);
+        }
+        if (source !== "map") {
+          revealStop(leg);
+        }
+      }, 150);
+    }
+
+    function firstLegOf(target) {
+      const legs = Array.from(activeFor(target).legs).sort(function (a, b) {
+        return Number(a) - Number(b);
+      });
+      return legs.length ? legs[0] : null;
+    }
+
+    function targetFor(el) {
+      const day = el.getAttribute("data-day");
+      return day
+        ? { type: "day", key: day }
+        : { type: "leg", key: el.getAttribute("data-leg") };
+    }
+
     function onOver(event) {
-      const el = event.target.closest("[data-leg]");
+      const el = event.target.closest("[data-day], [data-leg]");
       if (!el || (event.relatedTarget && el.contains(event.relatedTarget))) {
         return;
       }
-      hovered = el.getAttribute("data-leg");
+      hovered = targetFor(el);
       hoveredSource = sourceOf(el);
-      if (hoveredSource === "map") {
-        revealCard(hovered);
-      }
+      scheduleReveal(hovered, hoveredSource);
       paint();
     }
 
     function onOut(event) {
-      const el = event.target.closest("[data-leg]");
+      const el = event.target.closest("[data-day], [data-leg]");
       if (!el || (event.relatedTarget && el.contains(event.relatedTarget))) {
         return;
       }
+      window.clearTimeout(revealTimer);
       hovered = null;
       hoveredSource = null;
       paint();
@@ -783,24 +1017,35 @@
       if (!el) {
         return;
       }
-      pinned = el.getAttribute("data-leg");
+      pinned = targetFor(el);
       pinnedSource = sourceOf(el);
-      if (pinnedSource === "map") {
-        revealCard(pinned);
-      }
+      scheduleReveal(pinned, pinnedSource);
       paint();
     }
 
     function onFocusOut() {
+      window.clearTimeout(revealTimer);
       pinned = null;
       pinnedSource = null;
       paint();
+    }
+
+    function onClick(event) {
+      const el = event.target.closest("[data-day]");
+      if (!el) {
+        return;
+      }
+      const leg = firstLegOf(targetFor(el));
+      if (leg !== null) {
+        go("#/leg/" + leg);
+      }
     }
 
     home.addEventListener("pointerover", onOver);
     home.addEventListener("pointerout", onOut);
     home.addEventListener("focusin", onFocusIn);
     home.addEventListener("focusout", onFocusOut);
+    home.addEventListener("click", onClick);
 
     let observer = null;
     if (grid && "IntersectionObserver" in window) {
@@ -828,6 +1073,8 @@
       home.removeEventListener("pointerout", onOut);
       home.removeEventListener("focusin", onFocusIn);
       home.removeEventListener("focusout", onFocusOut);
+      home.removeEventListener("click", onClick);
+      window.clearTimeout(revealTimer);
       if (observer) {
         observer.disconnect();
       }
