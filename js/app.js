@@ -6,6 +6,8 @@
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
   const ICON_RIGHT =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+  const ICON_SKIP =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5l7 7-7 7"/><path d="M12 5l7 7-7 7"/></svg>';
 
   function escapeHtml(value) {
     return String(value)
@@ -260,6 +262,110 @@
 
   function go(hash) {
     location.hash = hash;
+  }
+
+  function isTypingModifier(event) {
+    return event.metaKey || event.ctrlKey || event.altKey;
+  }
+
+  function nodesIn(container, selector) {
+    if (!container) {
+      return [];
+    }
+    return Array.from(container.querySelectorAll(selector));
+  }
+
+  function sequentialMove(items, current, delta) {
+    const index = items.indexOf(current);
+    if (index === -1) {
+      return null;
+    }
+    const next = index + delta;
+    if (next < 0 || next >= items.length) {
+      return null;
+    }
+    return items[next];
+  }
+
+  function centerOf(el) {
+    const rect = el.getBoundingClientRect();
+    return { x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 };
+  }
+
+  function spatialMove(focusables, current, key) {
+    if (!focusables.length || !current) {
+      return null;
+    }
+    const cur = centerOf(current);
+    let best = null;
+    let bestScore = Infinity;
+    focusables.forEach(function (el) {
+      if (el === current) {
+        return;
+      }
+      const point = centerOf(el);
+      const dx = point.x - cur.x;
+      const dy = point.y - cur.y;
+      let valid = false;
+      if (key === "ArrowRight" && dx > 0 && Math.abs(dy) <= Math.abs(dx) * 1.5) {
+        valid = true;
+      } else if (key === "ArrowLeft" && dx < 0 && Math.abs(dy) <= Math.abs(dx) * 1.5) {
+        valid = true;
+      } else if (key === "ArrowDown" && dy > 0 && Math.abs(dx) <= Math.abs(dy) * 1.5) {
+        valid = true;
+      } else if (key === "ArrowUp" && dy < 0 && Math.abs(dx) <= Math.abs(dy) * 1.5) {
+        valid = true;
+      }
+      if (!valid) {
+        return;
+      }
+      const alignment =
+        key === "ArrowLeft" || key === "ArrowRight" ? Math.abs(dy) * 2 : Math.abs(dx) * 2;
+      const score = Math.hypot(dx, dy) + alignment;
+      if (score < bestScore) {
+        bestScore = score;
+        best = el;
+      }
+    });
+    return best;
+  }
+
+  function calendarMove(calendar, current, key) {
+    const grid = calendar.querySelector(".cal-grid");
+    if (!grid) {
+      return null;
+    }
+    const cells = Array.from(grid.children).slice(7);
+    const index = cells.indexOf(current);
+    if (index === -1) {
+      return null;
+    }
+    let delta = 0;
+    if (key === "ArrowLeft") {
+      delta = -1;
+    } else if (key === "ArrowRight") {
+      delta = 1;
+    } else if (key === "ArrowUp") {
+      delta = -7;
+    } else if (key === "ArrowDown") {
+      delta = 7;
+    } else {
+      return null;
+    }
+    let next = index + delta;
+    while (next >= 0 && next < cells.length) {
+      if (cells[next].hasAttribute("data-day")) {
+        return cells[next];
+      }
+      next += delta > 0 ? 1 : -1;
+    }
+    return null;
+  }
+
+  function applyRoving(focusables, active) {
+    focusables.forEach(function (el) {
+      el.tabIndex = el === active ? 0 : -1;
+    });
   }
 
   const SITE_COORDS = {
@@ -720,16 +826,17 @@
         return legs[index].title;
       })
       .join(", ");
+    const aria = formatDay(parts, false) + " \u00b7 " + names;
     return (
-      '<span class="' +
+      '<button type="button" class="' +
       classes +
       '" data-day="' +
       key +
-      '" title="' +
-      escapeHtml(formatDay(parts, false) + " \u00b7 " + names) +
+      '" aria-label="' +
+      escapeHtml(aria) +
       '">' +
       escapeHtml(label) +
-      "</span>"
+      "</button>"
     );
   }
 
@@ -752,7 +859,7 @@
       })
       .join("");
     return (
-      '<figure class="trip-calendar" aria-hidden="true">' +
+      '<figure class="trip-calendar">' +
       '<figcaption class="cal-caption micro">' +
       escapeHtml(calendarCaption(days)) +
       "</figcaption>" +
@@ -1012,8 +1119,22 @@
       paint();
     }
 
+    function keyboardReveal(target, source) {
+      window.clearTimeout(revealTimer);
+      const leg = firstLegOf(target);
+      if (leg === null) {
+        return;
+      }
+      if (source !== "grid") {
+        revealCard(leg);
+      }
+      if (source !== "map") {
+        revealStop(leg);
+      }
+    }
+
     function onFocusIn(event) {
-      const el = event.target.closest("[data-leg]");
+      const el = event.target.closest("[data-day], [data-leg]");
       if (!el) {
         return;
       }
@@ -1023,7 +1144,10 @@
       paint();
     }
 
-    function onFocusOut() {
+    function onFocusOut(event) {
+      if (event.relatedTarget && home.contains(event.relatedTarget)) {
+        return;
+      }
       window.clearTimeout(revealTimer);
       pinned = null;
       pinnedSource = null;
@@ -1046,6 +1170,77 @@
     home.addEventListener("focusin", onFocusIn);
     home.addEventListener("focusout", onFocusOut);
     home.addEventListener("click", onClick);
+
+    keyHandler = function (event) {
+      if (isTypingModifier(event)) {
+        return;
+      }
+      const active = document.activeElement;
+      if (!active || !home.contains(active)) {
+        return;
+      }
+
+      if (calendar && calendar.contains(active) && active.hasAttribute("data-day")) {
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowRight" ||
+          event.key === "ArrowUp" ||
+          event.key === "ArrowDown"
+        ) {
+          const next = calendarMove(calendar, active, event.key);
+          if (next) {
+            event.preventDefault();
+            next.focus();
+            pinned = targetFor(next);
+            pinnedSource = "calendar";
+            keyboardReveal(pinned, pinnedSource);
+            paint();
+          }
+        }
+        return;
+      }
+
+      if (map && map.contains(active)) {
+        const stops = nodesIn(map, ".route-stop a");
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+          const delta = event.key === "ArrowRight" ? 1 : -1;
+          const next = sequentialMove(stops, active, delta);
+          if (next) {
+            event.preventDefault();
+            next.focus();
+          }
+        }
+        return;
+      }
+
+      if (grid && grid.contains(active)) {
+        const cards = nodesIn(grid, ".leg-card");
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowRight" ||
+          event.key === "ArrowUp" ||
+          event.key === "ArrowDown"
+        ) {
+          let next = spatialMove(cards, active, event.key);
+          if (
+            !next &&
+            (event.key === "ArrowLeft" || event.key === "ArrowRight")
+          ) {
+            const delta = event.key === "ArrowRight" ? 1 : -1;
+            next = sequentialMove(cards, active, delta);
+          }
+          if (next) {
+            event.preventDefault();
+            next.focus();
+            keyboardReveal(
+              { type: "leg", key: next.getAttribute("data-leg") },
+              "grid"
+            );
+            paint();
+          }
+        }
+      }
+    };
 
     let observer = null;
     if (grid && "IntersectionObserver" in window) {
@@ -1117,6 +1312,111 @@
       escapeHtml(leg.title) +
       "</span></a>"
     );
+  }
+
+  function bindLegInteractions(legIndex) {
+    const page = app.querySelector(".page");
+    if (!page) {
+      return null;
+    }
+
+    const thumbs = nodesIn(page, ".thumb");
+    if (thumbs.length) {
+      applyRoving(thumbs, thumbs[0]);
+    }
+
+    function onThumbFocusIn(event) {
+      const thumb = event.target.closest(".thumb");
+      if (thumb && thumbs.indexOf(thumb) !== -1) {
+        applyRoving(thumbs, thumb);
+      }
+    }
+
+    page.addEventListener("focusin", onThumbFocusIn);
+
+    keyHandler = function (event) {
+      if (isTypingModifier(event)) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        go("#/");
+        return;
+      }
+
+      if (event.key === "[") {
+        if (legIndex > 0) {
+          event.preventDefault();
+          go("#/leg/" + (legIndex - 1));
+        }
+        return;
+      }
+
+      if (event.key === "]") {
+        if ((trip.legs || [])[legIndex + 1]) {
+          event.preventDefault();
+          go("#/leg/" + (legIndex + 1));
+        }
+        return;
+      }
+
+      const active = document.activeElement;
+      if (!active || !active.classList.contains("thumb")) {
+        return;
+      }
+
+      if (event.key === "Home") {
+        event.preventDefault();
+        applyRoving(thumbs, thumbs[0]);
+        thumbs[0].focus();
+        thumbs[0].scrollIntoView({ behavior: "smooth", block: "nearest" });
+        return;
+      }
+
+      if (event.key === "End") {
+        event.preventDefault();
+        const last = thumbs[thumbs.length - 1];
+        applyRoving(thumbs, last);
+        last.focus();
+        last.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        return;
+      }
+
+      if (
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowRight" &&
+        event.key !== "ArrowUp" &&
+        event.key !== "ArrowDown"
+      ) {
+        return;
+      }
+
+      let next = spatialMove(thumbs, active, event.key);
+      if (!next) {
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+          next = thumbs[0];
+        } else {
+          next = thumbs[thumbs.length - 1];
+        }
+        if (next === active) {
+          next = null;
+        }
+      }
+      if (next) {
+        event.preventDefault();
+        applyRoving(thumbs, next);
+        next.focus();
+        next.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    };
+
+    return function () {
+      page.removeEventListener("focusin", onThumbFocusIn);
+      thumbs.forEach(function (el) {
+        el.tabIndex = 0;
+      });
+    };
   }
 
   function renderLeg(legIndex) {
@@ -1202,12 +1502,33 @@
       siteNavLink(legIndex + 1, "next") +
       "</nav>" +
       "</div>";
+
+    teardown = bindLegInteractions(legIndex);
   }
 
   /* ---------- photo viewer ---------- */
 
   const ZOOM_SCALE = 2.6;
   let hintShown = false;
+
+  /* Offered only on the last photo, where "Next" has run out. */
+  function viewerSkipHtml(legIndex, photoIndex, lastIndex) {
+    const next = (trip.legs || [])[legIndex + 1];
+    if (!next || photoIndex < lastIndex) {
+      return "";
+    }
+    return (
+      '<a class="viewer-nav viewer-skip" href="#/leg/' +
+      (legIndex + 1) +
+      '" aria-label="Next site: ' +
+      escapeHtml(next.title) +
+      '"><span class="label">' +
+      escapeHtml(next.title) +
+      "</span>" +
+      ICON_SKIP +
+      "</a>"
+    );
+  }
 
   function renderPhoto(legIndex, photoIndex) {
     const title = trip.title || "West Coast Trip";
@@ -1251,6 +1572,7 @@
       '><span class="label">Next</span>' +
       ICON_RIGHT +
       "</button>" +
+      viewerSkipHtml(legIndex, photoIndex, lastIndex) +
       "</div>" +
       '<p class="viewer-meta">' +
       escapeHtml(formatFullDateTime(image.datetime)) +
@@ -1481,11 +1803,19 @@
       switch (event.key) {
         case "ArrowRight":
           event.preventDefault();
-          goTo(photoIndex + 1);
+          if (photoIndex < lastIndex) {
+            goTo(photoIndex + 1);
+          } else if ((trip.legs || [])[legIndex + 1]) {
+            go("#/leg/" + (legIndex + 1));
+          }
           break;
         case "ArrowLeft":
           event.preventDefault();
-          goTo(photoIndex - 1);
+          if (photoIndex > 0) {
+            goTo(photoIndex - 1);
+          } else if (legIndex > 0) {
+            go("#/leg/" + (legIndex - 1));
+          }
           break;
         case "Home":
           event.preventDefault();
@@ -1547,13 +1877,19 @@
     }
 
     const hash = location.hash || "#/";
-    const saved = scrollMemory[hash] || 0;
-    window.scrollTo(0, saved);
+    if (route.view === "leg") {
+      window.scrollTo(0, 0);
+    } else {
+      const saved = scrollMemory[hash] || 0;
+      window.scrollTo(0, saved);
+    }
     lastHash = hash;
   }
 
   function onHashChange() {
-    scrollMemory[lastHash] = window.scrollY;
+    if (!/^#\/leg\/\d+\/?$/.test(lastHash)) {
+      scrollMemory[lastHash] = window.scrollY;
+    }
     render();
   }
 
